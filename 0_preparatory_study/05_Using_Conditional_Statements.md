@@ -124,7 +124,7 @@ java Example04
 if문 괄호안의 '1이 2보다 작다'라는 비교 연산 결과가 참(true)입니다. 따라서 중괄호 안 코드가 실행되어 마지막에 "Hello"를 출력하였습니다. 
 
 ## 4. 코드 작성 3단계
-계속해서 기존 "**Example04.java**" 파일에 다음 코드를 추가합니다. 앞에서는 상수를 이용하여 비교 연산자를 수행했지만 이번에는 변수에 값을 저장하고 그 변수를 이용하여 비교 연산을 해보고자 합니다(주석 '조건문 대입 2 - false 조건'을 보시면 됩니다.).
+계속해서 기존 "**Example04.java**" 파일에 다음 코드를 추가합니다. 앞에서는 상수를 이용하여 비교 연산자를 수행했지만 이번에는 변수에 값을 저장하고 그 변수를 이용하여 비교 연산을 해보고자 합니다(주석 '조건문 대입 2 - false 조건'을 보시면 됩니다).
 ```
 class Example04
 {
@@ -193,7 +193,7 @@ class Example04
     // 조건문 대입 3 - 연산 결과를 구하고 그 값을 다시 비교 연산
     // 비교연산등호 '=='는 같다 라는 의미
     int num2 = 4;
-    if (num2 == 4)
+    if ((num2 % 2) == 1)
     {
       System.out.println("나머지가 1이면 출력된다.");
     }
@@ -203,3 +203,80 @@ class Example04
   }
 }
 ```
+(조건문 대입 3 - 연산 결과를 구하고 그 값을 다시 비교 연산)의 if문 괄호 안에서 또 다른 소괄호 속 나머지를 구하는 연산이 먼저 수행되고 결과가 나옵니다. 그 결과가 1이랑 같은지를 비교하게 됩니다. 그 결과가 참(true)이면 중괄호 안의 코드가 실행됩니다.\
+순서대로 표현하면 아래와 같이 변하게 됩니다. 연산의 우선 순위는 우리가 예전에 수학 시간에 배웠던 것처럼 괄호를 사용하는 것이 제일 먼저 계산됩니다.
+
+`if ((num2 % 2) == 1)` &rightarrow; `if((4 % 2) == 1)` &rightarrow; `if(0 == 1)` &rightarrow; `if(false)`
+
+바이트 코드로 컴파일 후 java 명령어로 실행해봅니다.
+```
+javac Example04.java
+```
+```
+java Example04
+```
+
+![0-19_step2_3_4_code_for_conditional](https://github.com/Ki-Sung/must_have_JAVA/assets/80456601/45d1cc10-f9b9-40d8-9c7e-bd66a5751871)
+
+최종으로 수행되는 비교 연산 결과가 거짓(false)이기에 중괄호 안에 코드는 실행되지 않고 그냥 통과 됩니다.
+
+## 6. 코드 작성 5단계
+계속해서 기존 "**Example04.java**" 파일에 다음 코드를 추가합니다. 이번에는 if문과 함께 사용할 수 있는 else문을 사용해봅니다. 
+```
+class Example04
+{
+  public static void main(String[] args)
+  {
+    System.out.println(2 < 3);
+    System.out.println(2 > 3);
+
+    boolean bMyCheck = (2 > 3);
+    System.out.println(bMyCheck);
+
+    // 조건문 대입 1 - true 조건
+    if (1 < 2)
+    {
+      System.out.println("Hello");
+    }
+
+    // 조건문 대입 2 - false 조건
+    int num = 3;
+    if (num < 2)
+    {
+      System.out.println("Hi~");
+    }
+    
+    // 조건문 대입 3 - 연산 결과를 구하고 그 값을 다시 비교 연산
+    // 비교연산등호 '=='는 같다 라는 의미
+    int num2 = 4;
+    if ((num2 % 2) == 1)
+    {
+      System.out.println("나머지가 1이면 출력된다.");
+    }
+    
+    // 조건문 대입 4 - if else문 대입
+    if ((num2 % 2) == 1)
+    {
+      System.out.println("나머지가 1: 홀수");
+    }
+    else
+    {
+      System.out.println("나머지가 1이 아님, 0: 짝수");
+    }
+  }
+}
+```
+(조건문 대입 4 - if else문 대입)의 if문의 비교 연산 결과가 참(ture)이면 그 아래 중괄호 영역이 실행됩니다. 거짓(false)이라면 else문 아래 중괄호 영역이 실행됩니다. 
+
+바이트 코드로 컴파일 후 java 명령어로 실행해봅니다.
+```
+javac Example04.java
+```
+```
+java Example04
+```
+
+![0-20_step5_code_for_conditional](https://github.com/Ki-Sung/must_have_JAVA/assets/80456601/e95e4785-4b33-4ec2-9cff-e6acb0ddc071)
+
+if문에서 비교 연산 결과가 거짓(false)이기에 else 영역의 중괄호 라인이 실행되어 해당 내용이 화면에 출력되었습니다.  
+`if ((num2 % 2) == 1)` &rightarrow; `if((4 % 2) == 1)` &rightarrow; `if(0 == 1)` &rightarrow; `if(false)` -> `else` -> `나머지가 1이 아님, 0: 짝수`
