@@ -33,7 +33,7 @@ class Example10{
 ## 2. 코드 작성 2단계
 이제 두 변수에 정수 데이터가 저장되었으므로 두 변수를 사용해서 사칙 연산을 하고 출력만 하면 됩니다. 이어서 코드를 작성합니다. 
 ```
-// Scanner 클래서 가져오기
+// Scanner 클래스 가져오기
 import java.util.Scanner;
 
 class Example10{
