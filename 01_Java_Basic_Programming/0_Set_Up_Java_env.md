@@ -63,56 +63,56 @@ brew install --cask adoptopenjdk8
 
 #### 4. 만약 에러가 발생했다면?
 혹시 다른 Java 환경이 있어 에러가 난다면 우리가 설치하고자 하는 Java 8 버전으로 변경해야 합니다.
-    1) `JavaVirtualMachines` 환경으로 이동
-        ```
-        cd /Library/Java/JavaVirtualMachines
-        ```
-        ![1-3_install_jdk_2](https://github.com/Ki-Sung/must_have_JAVA/assets/80456601/151d13b4-9b24-439e-b24d-14a406ce95cd)
+1) `JavaVirtualMachines` 환경으로 이동
+    ```
+    cd /Library/Java/JavaVirtualMachines
+    ```
+    ![1-3_install_jdk_2](https://github.com/Ki-Sung/must_have_JAVA/assets/80456601/151d13b4-9b24-439e-b24d-14a406ce95cd)
 
-    2) JDK 8 디렉토리로 이동
-       ```
-       cd adoptopenjdk-8.jdk
-       ```
-    3) JDK 8 디렉토리의 Contents → Home까지 이동
-       ```
-       cd Contents/Home
-       ```
-       ![1-4_install_jdk_3](https://github.com/Ki-Sung/must_have_JAVA/assets/80456601/ae44103d-148b-4fca-bd53-07787ae7a559)
+2) JDK 8 디렉토리로 이동
+   ```
+   cd adoptopenjdk-8.jdk
+   ```
+3) JDK 8 디렉토리의 Contents → Home까지 이동
+   ```
+   cd Contents/Home
+   ```
+   ![1-4_install_jdk_3](https://github.com/Ki-Sung/must_have_JAVA/assets/80456601/ae44103d-148b-4fca-bd53-07787ae7a559)
 
-       &rarr; 현재 경로 조회 후 경로 복사
-       ```
-       /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-       ```
+   &rarr; 현재 경로 조회 후 경로 복사
+   ```
+   /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+   ```
 
-    4) 현재 경로에서 Path를 복사 후 bash file로 이동
-       ```
-       cd ~/
-       ```
-       ```
-       ls -al
-       ```
-       ![1-5_install_jdk_4](https://github.com/Ki-Sung/must_have_JAVA/assets/80456601/010d93ce-e971-4325-bd9c-92862ffde75f)
+4) 현재 경로에서 Path를 복사 후 bash file로 이동
+   ```
+   cd ~/
+   ```
+   ```
+   ls -al
+   ```
+   ![1-5_install_jdk_4](https://github.com/Ki-Sung/must_have_JAVA/assets/80456601/010d93ce-e971-4325-bd9c-92862ffde75f)
 
-       &rarr; 만약 `.bash_profile`이 없다면 `touch .bash_profile` 이라고 명령어를 입력하여 만들기
+   &rarr; 만약 `.bash_profile`이 없다면 `touch .bash_profile` 이라고 명령어를 입력하여 만들기
 
-    5) bash file을 편집기로 들어가 환경 설정 - 여기서 vim 편집기 사용
-       ```
-       sudo vi .bash_profile
-       ```
-       설치된 Open JDK 8 버전의 Contents/home 경로가 JAVA_HOME으로 들어가게 되고 추가로 PATH가 bin 경로가 설정 됩니다.
-       ```
-       // 편집기 맨 아래 아래의 코드 입력 
-       export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-       export PATH=${PATH}:$JAVA_HOME/bin
-       ```
-       &rarr; 오타 확인 후 저장 후 나가기 `wq`
+5) bash file을 편집기로 들어가 환경 설정 - 여기서 vim 편집기 사용
+   ```
+   sudo vi .bash_profile
+   ```
+   설치된 Open JDK 8 버전의 Contents/home 경로가 JAVA_HOME으로 들어가게 되고 추가로 PATH가 bin 경로가 설정 됩니다.
+   ```
+   // 편집기 맨 아래 아래의 코드 입력 
+   export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+   export PATH=${PATH}:$JAVA_HOME/bin
+   ```
+   &rarr; 오타 확인 후 저장 후 나가기 `wq`
 
-    6) 수정된 bash file 적용하기
-       ```
-       source .bash_profile 
-       ```
+6) 수정된 bash file 적용하기
+   ```
+   source .bash_profile 
+   ```
 
-       &rarr; 적용 후 `java --version` 명령어를 입력해서 위와 같이 정보가 나온다면 이상없이 설치 되어진 것 입니다. 
+   &rarr; 적용 후 `java --version` 명령어를 입력해서 위와 같이 정보가 나온다면 이상없이 설치 되어진 것 입니다. 
 
 ## 3. Homebrew로 Intelli J IDE 설치
 통합 개발 환경(Integrated Development Enviroment)을 제공하는 Intelli J를 설치하여 자바 프로그래밍에 활용하도록 하겠습니다.\
