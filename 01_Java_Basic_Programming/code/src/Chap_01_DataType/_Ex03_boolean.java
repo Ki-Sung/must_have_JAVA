@@ -1,8 +1,7 @@
 package Chap_01_DataType;
 
-public class _EX03_boolean {
+public class _Ex03_boolean {
     public static void main(String[] args) {
-
         // 변수 선언 - boolean
         boolean check1 = true;      // 직접 값 대입 - true
         boolean check2 = false;     // 직접 값 대입 - false
