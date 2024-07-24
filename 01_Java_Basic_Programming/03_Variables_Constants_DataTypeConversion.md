@@ -1,6 +1,6 @@
 # 03 변수, 상수, 자료형의 형변환 
 - 선행 학습에서 배운 변수와 상수의 개념을 확장해봅니다. 그리고 자료형의 형변환이 무엇인지 알아봅니다.
-- 예제 코드는 "code/src/Chap_02_Variables_Constants_DataTypeConversion"에서 확인하실 수 있습니다.
+- 예제 코드는 "01_Java_Basic_Programming/code/src/Chap_02_Variables_Constants_DataTypeConversion"에서 확인하실 수 있습니다.
 ## 1. 변수 
 **변수**(**變**: 변할 **변**, **数**: 셀 **수**)는 변하는 수를 말합니다. 코드에서 변수가 구체적으로 무엇인지와 이름 짓는 방법을 알아보겠습니다.
 ### 1-1. 변수의 이해
