@@ -102,3 +102,87 @@ while (i > 10)
     i++;
 }
 ```
+
+## 4. 비교 연산자(관계 연산자)
+비교 연산자는 두 피연산자를 비교해 결괏값으로 논리 값인 true나 false를 반환해줍니다. 관계 연산자라고도 합니다. 
+```
+int x = 2;
+int y = 1;
+```
+위와 같이 x와 y가 있을 때 연ㅅ안 결과를 확인해보겠습니다. 
+
+| 연산자 | 사용 예 | 설명 | 결과 |
+|:---|:---|:---|:---|
+| == | x == y | x는 y와 같다 | false |
+| != | x != y | x는 y와 같지 않다 | true |
+| > | x > y | x는 y보다 크다 | true |
+| >= | x >= y | x는 y보다 크거나 같다 | true |
+| < | x < y | x는 y보다 작다 | false |
+| <= | x <= y | x는 y보다 작거나 같다 | false |
+
+코드를 작성할 때, 위와 같이 결론을 내고 결괏값이 들어와 있다고 생각을 해야합니다. 이렇게 하면 자연스럽게 컴퓨터의 연산 순서사 됩니다.
+
+<img width="973" alt="1-50_operator_structure" src="https://github.com/user-attachments/assets/37cad3ee-1230-45c9-8c62-9728aff6d888">
+
+위의 예를 보면 if문이 연산 결과를 만드는 것이 아니고 if문은 true, false만 확인하는 것이고, 비교 연산자가 true, false를 만드는 것입니다. 그래서 선행 학습 떄 while문에서 다음과 같이 코드를 사용할 수 있었던 겁니다.
+
+```
+while (true)
+{
+    ...
+}
+```
+
+다음은 비교 연산자를 사용하는 예제입니다. 
+
+![1-51_compare_oprator_example](https://github.com/user-attachments/assets/d72c99cb-3e53-4630-a439-f3fd3ba7c4b7)
+![1-52_compare_oprator_example_result](https://github.com/user-attachments/assets/db542497-6247-4e4e-909e-4209f91cb93c)
+
+아래 두 코드를 보면 1.0과 1은 실수와 정수인데, 그 결과가 놀랍게도 true와 false 입니다. 실수형으로 자동 형변환이 이뤄진 다음 비교 연산을 수행했기 때문입니다. 이처럼 비교 연산 시에도 형변환이 일어난다는 점 참고하시면 좋을 것 같아요.
+
+## 5. 논리 연산자
+논리 연산자는 예전 수학 시간에 배운 명제(논리적으로 뜻이 분명한 문장)를 다룹니다. 
+
+- 두 명제가 모두 참이면 논리곱은 참입니다.
+- 두 명제 중 하나라도 참이면 논리합은 참입니다.
+- 참의 부정은 거짓, 거싲의 부정은 참입니다.
+
+이러면 논리 연산을 프로그래밍 언어로 표현한 연산자가 논리 연산자입니다.
+
+| 연산자 | 기능 |
+|:---|:---|
+| && (논리곱, And) | 두 항이 모두 참이면 결괏값이 참입니다. 그렇지 않으면 모두 거짓입니다. |
+| ll (논리합, Or) | 두 항 중 하나의 항이라도 참이면 결괏값은 참입니다. 두 항이 모두 거짓이면 결괏값은 거짓입니다. |
+| ! (부정, Not) | 값이 참인 경우는 거짓으로 바꿉니다. 값이 거짓인 경우는 참으로 바꿉니다. |
+
+true, false 논리 연산 진리표를 살펴봅시다. 
+
+| A | B | A && B | A ll B | !A |
+|:---|:---|:---|:---|:---|
+| true | true | true | true | false | 
+| true | false | false | true | false | 
+| false | true | false | true | true | 
+| false | false | false | false | true | 
+
+다음은 논리 연산자를 사용하는 예제입니다. 
+
+![1-53_compare_opreator_exmaple2](https://github.com/user-attachments/assets/7164a9b9-0dd6-4446-996f-e155f9d10d52)
+![1-54_compare_opreator_exmaple2_result](https://github.com/user-attachments/assets/6c7edf7b-cf5a-4807-8cfb-3583dc6e0761)
+
+"1번" num1의 값은 11로, 10 보다 작지 않으므로 조건절을 만족하지 않아 false 입니다. "2번" num2의 값은 22이므로 2의 배수입니다. 2의 배수이거나 3의 배수이면 되므로 결과는 true 입니다. 
+
+### 5-1. 논리 연산자의 주의점
+그런데 이 논리 연산자를 사용해야 할 때 주의할 점이 있습니다. 연산의 특성 중에 Short Circuit Evaluation(SCE)라는 것이 있습니다. 우리말로 하면 "최단 거리 평가" 정도로 볼 수 있는데, 보통 SCE 라고 부릅니다. 이는 연산의 효율 및 속도의 향상을 위해 불필요한 연산을 수행하지 않는 기능을 말합니다. 
+
+예를 들어 논리곱에서 둘 다 참이어야 참이 되므로 앞쪽이 거짓이면 뒤쪽 계산을 수행하지 않습니다. 논리합에서 둘 중 하나라도 참이면 참이 되므로 앞쪽이 참이면 역시 뒤쪽 계산을 수행하지 않게 됩니다. 
+
+다음 예제로 확인해보겠습니다. 
+
+![1-55_logic_operator_example](https://github.com/user-attachments/assets/20e9bb0b-548a-4c47-a6d5-e66b02d7f2a2)
+![1-56_logic_operator_example_result](https://github.com/user-attachments/assets/b4096323-6bcb-44e2-8405-1d52e17870b8)
+
+"1번"에서 코드의 변화를 보겠습니다. 
+
+![1-57_logic_operator_example_result_structure](https://github.com/user-attachments/assets/095ea327-89b4-4e55-aff1-f7818a19a46e)
+
+이렇게 && 뒤쪽의 연산은 시작도 못해보고 result가 false가 결과로 대입됩니다. "2번"도 마찬가지 입니다. `||` 뒤쪽에 있는 y는 연산이 수행되지 않아 값이 증가하지 않았고, 초깃값 그대로 0입니다.
