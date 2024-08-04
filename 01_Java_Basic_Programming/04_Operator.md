@@ -186,3 +186,16 @@ true, false 논리 연산 진리표를 살펴봅시다.
 ![1-57_logic_operator_example_result_structure](https://github.com/user-attachments/assets/095ea327-89b4-4e55-aff1-f7818a19a46e)
 
 이렇게 && 뒤쪽의 연산은 시작도 못해보고 result가 false가 결과로 대입됩니다. "2번"도 마찬가지 입니다. `||` 뒤쪽에 있는 y는 연산이 수행되지 않아 값이 증가하지 않았고, 초깃값 그대로 0입니다.
+
+## 6. 조건 연산자 
+조건 연산자는 주어진 조건식이 참인 경우와 거짓인 경우에 다른 결괏값을 나타내주는 연산자입니다. 
+
+수식 표현법은 다음과 같습니다. 
+```
+조건식 ? 참일 때 실행: 거짓일 때 실행; 
+```
+
+사용 예를 코드로 표현해보겠습니다. 
+
+![1-58_conditional_structure](https://github.com/user-attachments/assets/18efd251-3b35-42ba-9937-f79629d66a2a)
+
