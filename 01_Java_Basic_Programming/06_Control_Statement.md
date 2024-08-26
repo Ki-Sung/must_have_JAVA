@@ -20,3 +20,51 @@ if문을 사용하여 조건을 분기시키는 방법과 조건 연산자를 �
 if문이 조건식의 결과를 만들어내는 것이 아니고 조건식 결과를 단순히 체크만 하는 겁니다.  
 
 그리고 앞에서 설명하지 않은 내용이 하나 있는데, if문이 실행되는 중괄호 안의 영역에서 실행되는 수행문이 하나만 있다면 중괄호는 생략할 수 있습니다. 
+
+![1-72_if_statement_exmaple](https://github.com/user-attachments/assets/2f42367d-6207-4db6-bc86-3f21ba9051a1)
+
+
+![1-73_if_statement_example_result](https://github.com/user-attachments/assets/e2ab3a8d-38e7-4fd2-85c3-2d1877d06c4b)
+
+"1번"은 우리가 처음 배운 방식입니다. 그래서 정상 출력됩니다. if문의 중괄호 안의 실행 문장이 이렇게 한 문장밖에 없다면 중괄호를 생략할 수 있습니다. num의 값이 100으로 50보다 크므로 "2번"이 실행되고 내용이 출력됩니다. "3번"처럼 같은 줄에 작성할 수도 있습니다. 역시 내용이 출력됩니다. 
+
+"4번", "5번", "6번"에서 원래 "5번"이 없다고 가정합시다. 그러면 num 변수의 값이 50보다 작다는 명제는 거짓이므로 "6번"이 실행되지 않습니다. 그런데 갑자기 num 변수의 값이 궁금해서 "5번"을 추가했습니다. 이러면 문제가 발생합니다. 이 if문은 중괄호가 없기 때문에 "5번"만 if문의 실행 영역으로 판단합니다. 그런데 관계가 없어진 "6번"의 들여쓰기 레벨이 자동으로 앞으로 나오지 않기 때문에 우리는 if문에 여전히 속해 있다고 착각을 하게 됩니다. 하지만 "6번"은 그냥 출력문이기 때문에 그냥 출력이 됩니다. 
+
+그래서 처음 자바의 if문을 사용하시는 분들은 가급적 중괄호를 생략하지 않는 편이 좋습니다. 코드를 작성하다 보면 위에서처럼 디버깅 메시지를 출력하는 코드를 넣게 되는 경우가 많은데, 이때 이미 중괄호가 있다면 아무 문제도 없지만, 중괄호가 생략되어 있으면 중괄호를 추가해줘야 하는데, 처음 사용하시는 분들은 이걸 자주 까먹습니다. 그러면 지금처럼 의도와 다른 결과를 만들게 됩니다. 
+
+### 1-2. switch문
+switch문을 사용하면 많은 선택지를 가지는 '분기 처리'를 할 수 있습니다. 조건식의 결과와 일치하는 case문에 작성된 문장을 실행합니다. 조건식의 값이 어떤 case와도 맞지 않으면 default로 넘어가게 됩니다. 그리고 각 case의 마지막에는 break문을 사용해서 선택한 처리만을 실행하도록 합니다. 
+
+![1-74_switfh_statement_structure](https://github.com/user-attachments/assets/2f17bee0-74e8-4bf1-8589-14690ea9b3cd)
+
+#### switch문 기본 사용법
+switch문 기본 사용법을 예제를 만들어 살펴보겠습니다. 
+
+![1-75_switch_statement_example_1](https://github.com/user-attachments/assets/dc87c895-ba31-4933-9374-7d4fe4aceca2)
+![1-76_switch_statement_example_1_ressult](https://github.com/user-attachments/assets/e7433a8c-48af-4952-a53d-1fcd18ce8f68)
+
+"1번" switch문의 조건식에는 이렇게 연산식을 넣어줄 수도 있고 그냥 변수만 넣어줄 수도 있습니다. 조건의 분기가 많을 때는 if문을 사용한 조건 분기보다 편하게 사용할 수 있습니다. 
+
+#### break문을 생략하기
+switch문에 break가 없을 때는 다음과 같이 실행됩니다. 앞 예제의 코드에서 break문 두 개를 주석 처리하고 다시 실행해봅니다.
+
+![1-77_switch_statement_execpet_break](https://github.com/user-attachments/assets/64db1c2e-9583-475b-821b-1e5899a6225d)
+
+switch문 안의 모든 case문 내용이 전부 실행되었습니다.
+
+이런 점을 조금 응용하여 다음과 같은 에제를 간편히 만들 수도 있습니다. 
+
+![1-78_switch_statement_example_2](https://github.com/user-attachments/assets/575f8f36-2675-4e15-9754-3d654ee541cd)
+![1-79_switch_statement_example_2_ressult](https://github.com/user-attachments/assets/9ee847ea-63f1-4c6d-ba0e-3113b7c66376)
+
+case 1 부터 5까지 break문을 없애 "주중"이 출력되도록 했습니다. 이와 같이 여러 개의 값을 묶어서 처리할 수도 있습니다. 
+
+*참고 - break 효과: break는 반복문과 switch문에서만 사용할 수 있습니다. 실행 흐름을 중단시키고 해당 중괄호 밖으로 빠져나갑니다.
+
+#### 조건식에 스트링 사용하기 
+그리고 java 7 이후로 자바도 switch문에 스트링을 사용할 수 있습니다. 예제로 확인해보겠습니다. 
+
+![1-80_switch_statement_example_3](https://github.com/user-attachments/assets/ba2a0eb3-705b-4a32-a8f5-d49ccb3b773a)
+![1-81_switch_statement_example_3_ressult](https://github.com/user-attachments/assets/122ed079-8d9d-4fc2-a9b6-1add9bad2e55)
+
+switch문의 조건식에 이렇게 스트링 변수나 스트링 값을 사용할 수 있습니다.
