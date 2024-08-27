@@ -68,3 +68,25 @@ case 1 부터 5까지 break문을 없애 "주중"이 출력되도록 했습니�
 ![1-81_switch_statement_example_3_ressult](https://github.com/user-attachments/assets/122ed079-8d9d-4fc2-a9b6-1add9bad2e55)
 
 switch문의 조건식에 이렇게 스트링 변수나 스트링 값을 사용할 수 있습니다.
+
+## 2. 반복문 
+반복문은 어떤 조건이 성립되는 동안 반복 처리를 실행하는 제어문입니다. 자바에서 반복문을 다음 세 가지 방법으로 만들 수 있습니다. 
+- for문을 이용한 반복
+- while문을 이용한 반복
+- do-while문을 이용한 반복
+
+### 2-1. for 문을 이용한 반복 
+반복문도 중괄호 안의 영역에서 실행되는 수행문이 하나만 있으면 중괄호를 생략할 수 있습니다. 그러나 처음 코드를 접하신 분들이라면 가급적 생략하지 않고 사용하는 것을 권장드립니다. 예제를 보겠습니다. 
+
+![1-82_for_statement_example1](https://github.com/user-attachments/assets/98c4e71b-0e7a-4ca9-87d5-af4e1a1c96e0)
+![1-83_for_statement_example1_result](https://github.com/user-attachments/assets/c7ef58de-c216-4bf4-9dec-8839f895fe93)
+
+"1번" 구구단의 2단을 2 * 2 부터 출력하고 있습니다. 
+
+"2번" 구구단의 3단을 3 * 2 부터 출력하고 있습니다. for 문에서 실행하는 문장이 한 줄이라 중괄호를 생략한 모습입니다. 
+
+"3번" 구구단의 4단을 4 * 2 부터 출력하고 있습니다. 역시 for 문에서 실행하는 문장이 한 줄이라 중괄호를 생략했고 같은 줄에다 작성까지 했습니다. 실행은 잘 되지만 보통 이렇게 사용하지 않습니다. 
+
+"4번" 구구단의 5단을 5 * 2 부터 출력하고 있습니다. 주석에 적은 것처럼 i 변수의 값이 궁금해서 "5번"을 추가할 수도 있습니다. 주석을 풀면 "6번"이 for문과 관계가 없어집니다. 그래서 i 변수가 선언되지 않았다고 에러를 냅니다. 저 i 변수는 for문 안에서만 사용할 수 있기 때문입니다.
+
+![1-84_for_statement_example1_error_result](https://github.com/user-attachments/assets/b9a5ec18-d687-4047-8aaf-93f623fde478)
