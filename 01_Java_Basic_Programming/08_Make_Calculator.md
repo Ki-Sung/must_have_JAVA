@@ -60,4 +60,26 @@
 `checkNum()` 메서드는 char형 데이터를 매개변수로 받아 숫자 0에서 9 사이의 값인지 확인하고 숫자이면 true를 반환하고 그렇지 않으면 false를 반환합니다.
 
 #### To do 02 - 이제 해당 메서드를 이용하여 입력받은 값을 체크하면 됩니다. 입력받는 부분을 다음과 같이 수정합니다. 
-![1-111_input_number_code](https://github.com/user-attachments/assets/d8c2e0fc-6140-4cdc-8b7c-525aaad402e8)
+![1-111_input_number_code](https://github.com/user-attachments/assets/b34b4c38-fefb-42b1-9d32-b1bbc762aa49)
+
+기존의 입력 코드는 "1번" 입니다. 입력된 것이 숫자가 아닐 수도 있는데 여기서 무조건 숫자로 처리하여 입력받기 때문에 에러가 발생합니다.
+
+"1번"을 주석 처리 하고 "2번"에서 `sc.nextLine()`을 이용하여 글자로 입력 받습니다. 글자로 입력을 받으면 키보드의 어떤 키라도 입력을 받을 수 있으므로 에러가 나지 않습니다. 다만 우리가 필요한 것은 한 글자, char형 데이터인데 char형의 데이터를 받는 기능은 따로 없으므로 `sc.nextLine().charAt(0)`을 이용하여 한 글자를 입력받습니다. 
+
+이제 char형 데이터 한 개를 입력받았으니 "3번" `checkNum()` 메서드에 매개변수로 넘겨 숫자인지 체크합니다. 반환받은 값이 false 이면 "4번"이 실행됩니다. 잘못 입력을 받은 것이니 다시 메뉴 출력을 반복합니다. 
+
+숫자이면 "5번"부터 다시 진행됩니다. "5번"에서처럼 숫자라고 판명된 char형 데이터를 바로 int형 데이터로 형변환해 출력해보면 '1'을 입력했을 때 49가 출력됩니다(문자 '1'의 십진수 값은 아스키코드표상 49이기 때문입니다). 
+
+"6번"처럼 코드를 작성하면 char형 숫자를 int형 숫자로 변경할 수 있습니다. 만약 다른 방법으로 처리하고자 한다면, "7번"처럼 입력된 문자에 '0'을 빼면 됩니다. 
+
+![1-112_string_minus_string_code](https://github.com/user-attachments/assets/56128476-e038-437a-a860-32f98c538b84)
+
+산술 연산이기 때문에 char형 데이터는 int형 데이터로 형변환되고 '1' 입력하면 아래와 같은 순서로 연산됩니다. 
+
+![1-113_string_minus_string_structure](https://github.com/user-attachments/assets/f57103a8-79a3-4875-a788-c36e37565826)
+
+결과는 아래와 같습니다.
+
+![1-114_calculator_result](https://github.com/user-attachments/assets/68856465-9b69-4200-956d-e66f3e0c2dd6)
+
+이렇게 메뉴를 선택할 때 숫자가 아닌 키보드의 다른 입력을 방지하는 코드를 적용시킬 수 있습니다. 
