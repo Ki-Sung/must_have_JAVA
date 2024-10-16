@@ -78,3 +78,33 @@
 #### To Do 08 - 계속 진행을 위해 `F7` 키를 한번 더 누릅니다. 12번 라인이 실행되면서 result 변수가 int형으로 만들어지고 더하기 연산의 결과 30을 대입받습니다. Debugger 창을 보면 result 변수가 스택 영역에 생성되고 정수 30이 대입되어 있습니다.
 
 ![145_step_into_3](https://github.com/user-attachments/assets/ad7b59f5-313c-4704-b85d-645da7fe5f75)
+
+#### To Do 08 - `F7` 키를 한번 더 누릅니다. return에 의해 adder() 메서드의 진행이 끝났기 때문에adder() 메서드를 호출한 곳으로 실행 포인트가 다시 돌아와 있습니다. 그리고 Debugger 창을 보면 Ex01_MemoryInStack.adder 프레임이 스택 영역에서 사라진 것을 볼 수 있습니다. 그리고 바로옆 결과 창에Ex01_MemoryInStack.main 프레임의 여태까지의 스택 상황을 다시 보여주고 있습니다.
+
+![146_step_into_4](https://github.com/user-attachments/assets/ddc83dc7-d493-4088-9375-d7df0e1510ba)
+
+#### To Do 09 - `F7` 키를 한번 더 누르면 실행 포인트가 다음 줄로 이동합니다. 
+
+![147_step_into_5](https://github.com/user-attachments/assets/50fd1f0b-e8fe-4ac2-9110-1a29ae9876db)
+
+#### To Do 10 - `F7` 키를 한번 더 누르면 내용을 출력하고 더 실행시킬 내용이 없기 때문에 실행 포인트가 main() 메서드의 마지막 중괄호까지 이동합니다. 
+
+![148_step_into_6](https://github.com/user-attachments/assets/b33c360c-433b-443f-9a19-a72910a9b34d)
+
+#### To Do 11 - `F7` 키를 한번 더 누릅니다. main의 중괄호까지 실행이 끝났기 때문에 Ex01_MemoryInStack.main 프레임이 스택 영역에서 제거됩니다. 이렇게 스택 영역에 아무것도 남아있지 않게 되면 프로그램은 종료됩니다. 
+
+![149_step_into_7](https://github.com/user-attachments/assets/66f5aa8d-6e7c-4041-bddb-cd313207a286)
+
+지금까지의 과정을 그림으로 그려보면 아래와 같습니다. 
+
+![150_ java_memory_structure](https://github.com/user-attachments/assets/394a2b24-2ff4-4b3b-85cb-90ae1e690958)
+
+앞에서 메서드 영역을 설명할 때 스태틱(static) 변수 및 스태틱(static) 메서드가 메서드 영역에 저장되며, 프로그램 시작 전에 로드되고 프로그램 종료 시 소멸된다고 했습니다. 해당 사항을 상기하면서 위의 그림을 봐주세요. 코드가 메서드 영역에 다 로딩이 되면 그중에서 스태틱으로 지정된 변수와 메서드를 찾아 메서드 영역 내 스태틱 영역으로 옮겨줍니다. 그래서 main() 메서드는 static 지시자가 붙어 있기 때문에 스태틱 영역에 위치하게 됩니다. 이때 스태틱 변수가 있다면 값이 여기서 대입됩니다. 아직 프로그램이 시작하기 전입니다.
+
+그리고 JVM은 무조건 메서드 영역 내 스태틱 영역에서 main() 메서드를 첫 메서드로 실행 시킵니다. 만약 스태틱 영역에 옮겨진 main()이 없다면 프로그램은 실행되지 않습니다. 그래서 우리가 실행시키려고 "1번" JVM에 전달한 클래스에는 main() 메서드가 반드시 있어야 하고 public으로 접근 가능해야 합니다. 그래야 자바 프로그램이 실행됩니다. 
+
+<img width="624" alt="151_static_main_method" src="https://github.com/user-attachments/assets/584627d3-efe9-406f-a893-d95cf12a0134">
+
+왜 모든 프로그램에서 위와 같이 "2번" static 지시자가 쓰였는지, 왜 메서드 이름이 "3번" main인지, 앞에 "1번" public은 왜 붙어있는지 아시겠지요? 
+
+스태틱(static)은 자바의 메모리 모델 구조가 이렇게 만들어졌기에 단지 먼저 추려내져야 하는 변수와 메서드가 있다면 static 지시자 표시를 하여 메모리의 특정 영역에 따로, 그리고 미리 로딩시켜놓은 것 뿐입니다. 
