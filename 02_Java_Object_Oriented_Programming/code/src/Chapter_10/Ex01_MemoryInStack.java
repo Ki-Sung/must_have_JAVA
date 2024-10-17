@@ -1,4 +1,4 @@
-package Chapter_10.Chapter10_1;
+package Chapter_10;
 
 public class Ex01_MemoryInStack {
     public static void main(String[] args) {

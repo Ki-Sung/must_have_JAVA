@@ -1,4 +1,4 @@
-package Chapter_10.Chapter10_2;
+package Chapter_10;
 
 public class Book {
     int num;

@@ -1,4 +1,4 @@
-package Chapter_10.Chapter10_2;
+package Chapter_10;
 
 public class Ex02_MemoryInHeep1 {
     public static void main(String[] args) {
