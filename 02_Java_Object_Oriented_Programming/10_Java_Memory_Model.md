@@ -158,26 +158,26 @@
 
 여기서 스택 영역 main 프레임 안에 생성된 변수들을 확인하면 book1과 book2가 참조하는 id값이 다릅니다. 이를 통해 힙 영역의 서로 다른 객체를 참조하고 있다는 것을 확인할 수 있습니다. 
 
-#### To Do 08 - `F7` 키를 다시 한번 눌러줍니다. 코드 8라인이 실행되면서 book1의 맴버 변수에 값이 대입됩니다.
+#### To Do 08 - `F7` 키를 다시 한번 눌러줍니다. 코드 8번 라인이 실행되면서 book1의 맴버 변수에 값이 대입됩니다.
 ![159_step_into_3](https://github.com/user-attachments/assets/063bbfc8-d7e3-4a80-91dd-b58b0029b43d)
 
-#### To Do 09 - `F7` 키를 다시 한번 눌러줍니다. 코드 9라인이 실행되면서 book2의 맴버 변수에 값이 대입되고 있습니다.
+#### To Do 09 - `F7` 키를 다시 한번 눌러줍니다. 코드 9번 라인이 실행되면서 book2의 맴버 변수에 값이 대입되고 있습니다.
 ![160_step_into_4](https://github.com/user-attachments/assets/a28a5217-eba1-46fa-8a66-759e96aedc34)
 
-#### To Do 10 - `F7` 키를 다시 한번 눌러줍니다. 코드 11라인이 실행되면서 book1의 맴버 변수의 값을 출력합니다. 힙 영역에서 만들어져 있는 객체의 맴버 변수에 값을 잘 대입하고 잘 가져옵니다.
+#### To Do 10 - `F7` 키를 다시 한번 눌러줍니다. 코드 11번 라인이 실행되면서 book1의 맴버 변수의 값을 출력합니다. 힙 영역에서 만들어져 있는 객체의 맴버 변수에 값을 잘 대입하고 잘 가져옵니다.
 ![161_step_into_5](https://github.com/user-attachments/assets/8db040a0-0137-4845-9619-b249a46e402a)
 
 ![162_step_into_5_result](https://github.com/user-attachments/assets/40c80ce2-12ed-481c-b459-09e3f29e28f9)
 
-#### To Do 11 - `F7` 키를 다시 한번 눌러줍니다. 12라인이 실행되면서 book2의 맴버 변수의 값을 출력합니다. 힙 영역에서 만들어져 있는 객체의 맴버 변수에 값을 잘 대입하고 잘 가져옵니다.
+#### To Do 11 - `F7` 키를 다시 한번 눌러줍니다. 12번 라인이 실행되면서 book2의 맴버 변수의 값을 출력합니다. 힙 영역에서 만들어져 있는 객체의 맴버 변수에 값을 잘 대입하고 잘 가져옵니다.
 ![163_step_into_6](https://github.com/user-attachments/assets/352a9b2b-ca07-49e9-816b-cc02b7c66cb2)
 
 ![164_step_into_6_result](https://github.com/user-attachments/assets/0590cb7e-0221-42cd-ae0c-cc267f2769ff)
 
-#### To Do 12 - `F7` 키를 다시 한번 눌러줍니다. 코드 14라인이 실행되면서 book1에 null을 대입합니다. 이렇게 null을 대입하는 것을 참조를 끊는다라고 표현합니다. 스택 영역의 변수와 힙 영역의 객체 간에 참조 관계를 끊는 것입니다.
+#### To Do 12 - `F7` 키를 다시 한번 눌러줍니다. 코드 14번 라인이 실행되면서 book1에 null을 대입합니다. 이렇게 null을 대입하는 것을 참조를 끊는다라고 표현합니다. 스택 영역의 변수와 힙 영역의 객체 간에 참조 관계를 끊는 것입니다.
 ![165_step_into_7](https://github.com/user-attachments/assets/1f2d10e8-57c7-4e4b-9b47-0937398079b7)
 
-#### To Do 13 - `F7` 키를 다시 한번 눌러줍니다. 코드 15라인이 실행되면서 book2에 null을 대입하고 참조 관계를 끊습니다. 
+#### To Do 13 - `F7` 키를 다시 한번 눌러줍니다. 코드 15번 라인이 실행되면서 book2에 null을 대입하고 참조 관계를 끊습니다. 
 ![166_step_into_8](https://github.com/user-attachments/assets/4dc8182e-8434-4c45-8232-5f54e45a78f9)
 
 이렇게 참조를 끊을 때 힙 영역의 객체가 바로 사라지는 것은 아닙니다. 스택 영역에 있는 변수에 더는 힙 영역의 객체를 참조하지 않는다고 표시만 한 것입니다.
@@ -205,3 +205,63 @@
 ![167_step_into_9](https://github.com/user-attachments/assets/d8834105-735d-4d01-9efd-89da2edb15f3)
 
 프로그램이 수행 중일 때는 가비지 컬렉터에 의해 메모리 관리가 되지만 이처럼 종료가 되면 운영체제 차원에서 힙 영역의 모든 객체를 제거하고 메모리를 회수합니다. 
+
+## 4. 디버깅하며 배우는 힙 영역 객체 참조
+이번에는 힙 영역에 생성된 객체가 어떻게 참조되는지를 알아보겠습니다. 
+#### To Do 01 - 프로젝트에 Ex03_MemoryInHeep2.java 클래스 파일을 추가하고, 아래와 같이 코드를 작성해줍니다.
+![168_add_memory_heep_example_2](https://github.com/user-attachments/assets/c3d804a0-07b0-4161-b167-11d7f246d3d3)
+
+여기서도 Book 클래스를 써야하므로 디렉토리 구조를 변경하였습니다. 
+
+앞서 만들어놓은 Book 클래스는 이번에도 사용합니다. 
+
+"1번" 객체를 생성해서 book1 변수에 대입해주었습니다. "2번" 그리고 그 변수를 이용해서 새로운 참조 변수 book2에 대입해주었습니다. 이럴 경우 객체가 새로 만들어지는지, 기존 객체를 다시 사용하는지 디버긔 모드를 실행해서 살펴보도록 하겠습니다. 
+
+#### To Do 02 - main() 메서드가 시작하는 위치에 Breakpoint를 만들어줍니다.
+![169_setup_break_point](https://github.com/user-attachments/assets/6b69a3c9-b651-4bc7-8f6d-2ad9323863bf)
+
+#### To Do 03 - Debug 모드로 프로그램을 실행해줍니다. 
+![170_start_debug_mode](https://github.com/user-attachments/assets/6702b19c-fa67-427f-8acd-f43a9291cc06)
+
+#### To Do 04 - 여기서 `F7` 키를 한 번 누릅니다. 코드 5번 라인이 실행되면 new 연산자와 Book() 생성자들이 이용하여 객체를 힙 영역에 만들고, 객체를 참조할 수 있게 객체를 관리하는 id값을 Book 클래스형의 book1 변수에 대입해줍니다.
+![171_step_into_1_book1](https://github.com/user-attachments/assets/1e9dbd2e-02be-4bd7-93e4-3de961bb55dc)
+
+#### To Do 05 - `F7` 키를 다시 한번 눌러줍니다. 코드 6번 라인이 실행되면서 book1의 맴버 변수에 값이 대입되고 있습니다.
+![172_step_into_2_book1_result](https://github.com/user-attachments/assets/6ffc11f6-8bd7-428f-bf54-a942251758eb)
+
+#### To Do 06 - `F7` 키를 다시 한번 눌러줍니다. 코드 8번 라인이 실행되면서 Book 클래스형의 book2 변수를 만들고 기존 book1의 값을 대입합니다. 
+![173_step_into_3_book2_result](https://github.com/user-attachments/assets/469c6df3-eb55-480b-89d2-ceba2f6aed9e)
+
+book1의 id값은 힙 영역에 만들어진 객체가 메모리의 어느 위치에 있다를 가리키고 있는 참조 값입니다.
+
+book2에 book1을 대입한 결과를 스택에서 살펴보면 book2에도 book1이 참조하고 있던 기존 객체의 id값이 똑같이 들어와 있습니다.
+
+즉 대입 연산은 연산의 결과, 상수 또는 기존 변수의 값을 새로운 변수의 값으로 넣어주는 것이므로, 지금도 book2 변수에 book1 변수의 값이 대입이 되고 해당 값은 기존 객체를 참조할 수 있는 id값 입니다.
+
+결과적으로 힙 영역에 객체를 새로 만드는 것이 아니고, 기존 객체를 가리키는 변수만 하나 더 늘어난 것입니다. 
+
+![174_java_memory_structure_heep](https://github.com/user-attachments/assets/c032bc18-0f8b-47f3-8e2d-34bf79bd04e5)
+- 이렇게 하나의 객체를 여러 변수가 참조할 수 있습니다. 가비지 컬렉터는 이런 참조가 하나도 없는 힙 영역의 객체를 제거 대상으로 삼습니다.
+
+#### To Do 07 - `F7` 키를 눌러 코드 10번 라인과 코드 11번 라인을 진행하면 변수명은 다르지만 실제 같은 객체를 가리키고 있으므로 객체 안의 num 맴버 변수의 값을 출력한 결과는 같습니다. 
+![175_step_into_34](https://github.com/user-attachments/assets/3337b17c-ef86-4876-bc25-5d841670024c)
+
+![176_step_into_34_result](https://github.com/user-attachments/assets/b667bc1a-8171-4fec-bcfb-75437e27c220)
+
+#### To Do 08 - `F7` 키를 다시 한번 눌러줍니다. 코드 14번 라인이 실행되면서 book2의 맴버 변수 num의 값을 새로운 값으로 대입합니다. 
+![177_step_into_5](https://github.com/user-attachments/assets/7a41faf3-d48e-4083-a016-b8fb5e313acc)
+
+스택창에서 확인할 수 있듯이 book1, book2 두 변수가 가리키는 객체의 맴버 변수 num의 값이 동시에 반경되고 있습니다. 같은 객체를 가리키고 있기 때문입니다. 
+
+#### To Do 09 - `F7` 키를 계속 눌러 출력해보면 변경된 값이 같게 출력되는 것을 확인할 수 있습니다. 중괄호 끝까지 진행해서 프로그램을 종료시킵니다. 
+![178_step_into_6](https://github.com/user-attachments/assets/af7947e9-892d-402d-8c35-a4b010718b53)
+
+### 학습 마무리 - 핵심 요약 
+여기 가지 자바 프로그래밍에서 사용하는 메모리 모델의 구조를 알아보았습니다.
+
+1. 자바 프로그램이 실행되면서 확보한 메모리 영역을 크게 메서드 영역, 스택 영역, 힙 영역으로 구분하여 사용합니다.
+2. 메서드 영역에는 프로그램 실행에 대한 코드, 스태틱 변수 및 메서드, 런타임 상수 풀이 생성 됩니다.
+3. 런타임 상수 풀에는 컴파일 타임에 알려진 숫자 리터럴부터 런타임에 확인되어야 하는 메서드 및 필드 참조에 이르기까지 여러 종류의 상수가 포함됩니다.
+4. 메서드가 호출되면 지역 변수, 매개변수가 프레임 형태로 생성되어 스택 영역으로 쌓였다가 사라집니다.
+5. 클래스의 객체(인스턴스), 배열이 new 연산자에 의해 힙 영역에 동적으로 생성됩니다.
+6. 생성된 객체는 자동 저장소 관리 시스템인 가비지 컬렉터에 의해 사용이 없음이 확인되면 자동으로 제거됩니다.
