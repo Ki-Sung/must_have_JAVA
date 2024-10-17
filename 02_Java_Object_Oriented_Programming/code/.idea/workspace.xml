@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd9c382a-0b5a-41ac-ba6d-353874ff06a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Chapter_10/Chapter10_1/Ex01_MemoryInStack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Chapter_10/Chapter10_2/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Chapter_10/Chapter10_2/Ex02_MemoryInHeep1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,5 +72,20 @@
       <updated>1727156217921</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Chapter_10/Chapter10_2/Ex02_MemoryInHeep1.java</url>
+          <line>3</line>
+          <properties class="Chapter_10.Chapter10_2.Ex02_MemoryInHeep1" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
