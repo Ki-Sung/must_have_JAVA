@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd9c382a-0b5a-41ac-ba6d-353874ff06a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Chapter_10/Ex03_MemoryInHeep2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter_10/Chapter10_1/Ex01_MemoryInStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chapter_10/Ex01_MemoryInStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter_10/Chapter10_2/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chapter_10/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter_10/Chapter10_2/Ex02_MemoryInHeep1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chapter_10/Ex02_MemoryInHeep1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,15 +82,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/Chapter_10/Ex03_MemoryInHeep2.java</url>
-          <line>3</line>
-          <properties class="Chapter_10.Ex03_MemoryInHeep2" method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
