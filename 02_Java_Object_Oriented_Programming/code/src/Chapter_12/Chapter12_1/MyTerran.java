@@ -1,4 +1,5 @@
-package Chapter_12;
+package Chapter_12.Chapter12_1;
+
 // 부모 클래스 - 유닛의 공통 속성과 기능을 정의
 class Unit {
     String name;                            // 인스턴스 변수 1 - 유닛 이름
@@ -33,7 +34,6 @@ class Medic extends Unit {
     }
 }
 
-// 메인 클래스 MyTerran - 실행 클래스
 public class MyTerran {
     public static void main(String[] args) {
         // 각각의 유닛 객체 생성 및 속성 설정
