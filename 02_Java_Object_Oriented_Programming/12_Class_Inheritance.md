@@ -201,3 +201,7 @@ Unit 클래스는 "1번" 4번 라인에서 추상 메서드를 가지고 있으�
 
 ![207_terran_building_example_code](https://github.com/user-attachments/assets/4d543059-102e-4413-9b28-eb972a17241f)
 ![208_terran_building_example_code_result](https://github.com/user-attachments/assets/ddd479b0-e101-4a66-88a9-f08395fdcf2f)
+
+모든 건물은 `1번` 상위 추상 클래스 Building을 상속받아 `2번` doBuild() 메서드를 구현하고 있습니다. 추상 클래스 Building을 상속받았다면 혹시라도 건물의 기능을 빼먹고 안 만드는 실수를 하지 않게 될 겁니다. 건물이라면 받드시 만들어야 할 기능이 추상 메서드로 강제되어 있기 때문입니다. 
+
+그리고 날아서 이동을 해야하는 건물에만 `3번` 인터페이스 Fly를 구현하고 있습니다.
