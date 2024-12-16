@@ -22,9 +22,64 @@ java Exam01
 
 이번 예제는 IDE(Intelli J 혹은 이클립스)에서 코드를 작성하고 '명령 프롬프트(터미널)'에서 실행을 해보겠습니다. 
 
-<img width="960" alt="224_classpath_example_class_code" src="https://github.com/user-attachments/assets/14d483bd-73b0-433c-a92e-c709c67307e8" />
-<img width="955" alt="225_classpath_example_01" src="https://github.com/user-attachments/assets/63776549-bc69-4242-81a4-e5367450496a" />
+#### Todo 01 Chapter13 프로젝트에 Apple.java와 Ex01_ClassPath.java를 다음과 같이 생성합니다.
+![226_classpath_example_code_structure](https://github.com/user-attachments/assets/0fd58354-8ebf-4397-a7db-cef4c10b294b)
+
+<img width="960" alt="224_classpath_example_class_code" src="https://github.com/user-attachments/assets/9a263c1f-3562-475a-b841-2d96ce67f616" />
+<img width="955" alt="225_classpath_example_01" src="https://github.com/user-attachments/assets/d193423b-2668-4413-a762-2110a26e1fe6" />
+
 
 Ex01_ClassPath(2번째 코드) 클래스에서 `1번`Apple 클래스를 이용해 객체를 생성하고 `2번`에서 메서드를 호출합니다. 두 클래스가 같은 폴더에 있기 때문에 Ex01_ClassPath 클래스에서 Apple 클래스를 사용할 수 있는 겁니다. 
 
-이제 명령 프롬프트(터미널)환경에서 직접 실행해보겠습니다. 
+이제 명령 프롬프트(터미널)환경에서 직접 실행해보겠습니다. 해당 작업은 Mac 환경을 기준으로 합니다. 
+
+#### Todo 02 Mac에서 '터미널'을 실행해줍니다. 그리고 작업할 디렉토리로 가줍니다. 
+![227_open_terminal](https://github.com/user-attachments/assets/9708ffba-218b-4aac-8cab-13a469172cb8)
+
+#### Todo 03 이제 컴파일을 합니다. 
+```
+javac Ex01_ClassPath.java Apple.java
+```
+여기서 중요한 점은 모든 java 파일을 컴파일 해야한다는 점입니다.
+
+컴파일이 되었으면 아래와 같이 class 파일이 생성됩니다. 
+![228_check_classfile](https://github.com/user-attachments/assets/b7363d7a-6317-49f0-bf61-05e585e623e6)
+
+
+#### Todo 04 이제 실행해봅니다. 
+원래 `java Ex01_ClassPath` 명령어를 입력해서 실행해야 하지만, 아래와 같이 에러가 발생합니다. 
+![230_run_example01_error](https://github.com/user-attachments/assets/e906445e-5dc6-4d49-adf3-0f41db46f81e)
+
+에러의 내용은 Java 프로그램을 실행할 때 클래스 경로(classpath)에 지정된 클래스 파일을 찾을 수 없다 라고 나오는데 이때 클래스 패스 설정을 해서 아래와 같이 명령어를 입력해줍니다.
+```
+java -cp .. Chapter_13.Ex01_ClassPath
+```
+![229_run_exmaple01](https://github.com/user-attachments/assets/bdb253e3-d2ad-4e1e-abc6-71e2c1d534b3)
+
+제대로 결과가 출력됨을 확인할 수 있습니다. 
+
+### Todo 05 또 다른 상황을 만듭니다. 만약 아래와 같이 Apple.class 파일을 sub 디렉토리에 옮겨 봅니다.
+
+![231_move_apple_class](https://github.com/user-attachments/assets/f3af8ec7-f15b-4b80-83a0-edd7e66fa554)
+
+### Todo 06 다시 Ex01_ClassPath를 실행시켜봅니다.
+![232_error2](https://github.com/user-attachments/assets/3cb9864d-cb5d-4cb8-809e-37ef0d953e1b)
+
+NoClassDefFoundError: Apple 에러가 납니다. 객체를 new(객체 생성)하려고 하는데 해당 클래스 파일을 찾을 수 없다는 에러입니다. 이때도 클래스 패스를 사용하게 됩니다. java를 실행할 때, 옵션으로 클래스 패스를 지정해 클래스 패스에 지정된 폴더에서도 클래스를 찾아달라고 지정하고 실행 합니다. 
+
+### Todo 07 아래와 같이 클래스 파일을 해당 디렉토리에 생성하도록 컴파일 하고 sub 디렉토를 클래스 경로에 추가한후 실행합니다.
+![233_classpath_result1](https://github.com/user-attachments/assets/58ad13ce-8f53-4724-96f6-ea568ef1679d)
+
+- 앞의 `.`은 현재 폴더를 클래스 패스에 포함시키라는 뜻입니다.
+- 여기에서는 현재 폴더와 현재 폴더의 하위 sub 폴더까지 클래스 패스에 추가됩니다.
+- 폴더들의 구분은 `:`[콜론](윈도우는 `;`[세미콜론])으로 해줍니다.
+- 경로는 지금처럼 상대 경로로 지정해줄 수도 있고 절대 경로로 지정해줄수 있습니다.
+
+아까는 클래스 파일들이 같은 폴더에 없어서 에러가 났지만, 지금은 클래스들이 같은 폴더에 있지는 않아도 클래스 패스에 있는 폴더에서 찾을 수 있기 때문에 에러가 발생하지 않습니다. 이렇게 옵션으로 클래스 패스를 매번 지정하여 실행하는 방법은 불편하기 때문에 패키지를 사용하게 됩니다. 
+
+**`참고`**: **환경 변수로 클래스 패스 지정하기**\
+클래스 패스를 옵션으로 지정하여 실행하는 것은 불편하기 때문에 영구적으로 패스를 지정할 수도 있습니다. java를 실행하기 위해 환경 변수 PATH를 설정한 기억이 있을 겁니다. 자바 클래스 패스 지정 역시 '시스템 환경 변수 편집'에서 CLASSPATH 변수를 만들어 클래스 패스로 사용할 폴더들을 등록해주면 됩니다. 
+
+하지만 다음과 같은 문제가 있습니다. 
+
+대규모 개발 프로젝트는 혼자서 진행이 힘들기 때문에 팀을 구성하여 작업을 진행하게 되고, 그러면 공동 작업자가 많아집니다. 더구나 한 폴더에서 작업을 하게 되면 클래스가 많아지게 되고 관리가 힘들게 됩니다. 공동 작업자가 많으면 폴더에서 클래스 파일의 이름이 중복될 수도 있습니다. 여기서도 네이밍의 문제가 나옵니다. 그래서 폴더를 나눠서 관리를 하게 되는데 불편하다고 클래스 패스를 너도 나도 등록하면 결국 클래스명이 또 다시 겹치게 됩니다. 
