@@ -83,3 +83,44 @@ NoClassDefFoundError: Apple 에러가 납니다. 객체를 new(객체 생성)하
 하지만 다음과 같은 문제가 있습니다. 
 
 대규모 개발 프로젝트는 혼자서 진행이 힘들기 때문에 팀을 구성하여 작업을 진행하게 되고, 그러면 공동 작업자가 많아집니다. 더구나 한 폴더에서 작업을 하게 되면 클래스가 많아지게 되고 관리가 힘들게 됩니다. 공동 작업자가 많으면 폴더에서 클래스 파일의 이름이 중복될 수도 있습니다. 여기서도 네이밍의 문제가 나옵니다. 그래서 폴더를 나눠서 관리를 하게 되는데 불편하다고 클래스 패스를 너도 나도 등록하면 결국 클래스명이 또 다시 겹치게 됩니다. 
+
+## 2. 패키지 
+많은 클래스를 다루는 대규모 프로그램을 작성하는 경우, 이름이 같은 클래스들을 사용해야 하는 상황이 발생할 수 있습니다. 한 폴더에서 클래스 파일이 많아지면 클래스명이 충돌할 수 있는데, 충돌을 방지하는 가장 효과적인 방법은 폴더를 나누어 관리하는 것입니다.
+
+자바에서는 패키지(package)는 관련이 있는 클래스를 묶어 폴더로 구분하여 관리하는 기법인데, 패키지를 사용하면 클래스명이 충돌하는 것도 방지할 수 있습니다. 
+
+![234_introduce_package](https://github.com/user-attachments/assets/0c3de5bd-3022-4587-af88-6783416c69b1)
+
+패키지를 이용하는 파일은 현재 src/Chapter13 폴더에 있습니다. 여기서 java가 실행됩니다. 패키지명은 클래스가 있는 폴더명을 단계대로 차례 차례 가리킨다고 보면 됩니다. 그래서 Banana.class는 현재 폴더 아래 com 폴더 아래 study 폴더 아래 위치하게 됩니다. 패키지를 이용하는 파일이 있는 현재 폴더와 클래스가 있는 폴더가 서로 다르기 때문에 현재 폴더에서 Banana 클래스를 이용하려면 public으로 접근 제한자가 지정되어 있어야 합니다. 
+
+이제 예제를 이용해보겠습니다. 
+
+#### Todo 01 Intelli J에서 'Chapter_13를 선택' &rarr; '우클릭한 후' &rarr; 'New' &rarr; 'Package'를 선택합니다.
+![235_make_package](https://github.com/user-attachments/assets/4e1e9873-5913-45ac-99e8-f9cbb8a085a5)
+
+#### Todo 02 패키지를 만드는 창이 뜨면 'com.sutdy' 입력합니다. 이렇게 입력하면 현재 Chapter13 폴더 아래 com 폴더를 만들고 그 폴더 아래 다시 study 폴더를 만들어줍니다.
+![236_package_name](https://github.com/user-attachments/assets/8a913d54-0c05-48fb-a830-e8ef7202e665)
+
+#### Todo 03 그리고 해당 폴더(패키지)안에 Banana.java 파일을 만들어줍니다.
+![237_diractoty_package](https://github.com/user-attachments/assets/54a25a5e-5c8b-44a9-8823-0d08171f8239)
+
+#### Todo 04 만든 Banana.java 파일에 아래와 같이 코드를 입력해줍니다.
+![238_package_example_code1](https://github.com/user-attachments/assets/06d1925f-e0bc-4685-9fe5-f109f122a4a7)
+
+#### Todo 05 이제 Banana 클래스를 사용하는 클래스를 만들어보겠습니다. 'Ex02_PackageUse' 클래스를 만들어 추가해줍니다. 이번에는 패키지명이 들어가면 안 됩니다. 제대로 만들어지면 아래와 같은 구조가 됩니다.
+![240_diractory_package_2](https://github.com/user-attachments/assets/b986ea70-49ec-4b7b-b23b-25a509919e75)
+
+#### Todo 06 'Ex02_PackageUse.java'에 다음과 같이 코드를 작성해줍니다.
+![239_package_example_code2](https://github.com/user-attachments/assets/6fa3d4d3-a8d2-4f52-af84-62d081a0f183)
+![241_package_example_code2_result](https://github.com/user-attachments/assets/e47b1b49-14cc-40b9-8107-9ef35b3949c5)
+
+`1번`Apple 클래스는 같은 폴더에 있으므로 이전과 동일한 방법으로 사용하면 됩니다. 
+
+`2번`Banana 클래스는 다른 폴더에 있으므로 클래스명만 사용하면 찾을 수 없기 때문에 에러가 발생합니다. 
+
+`3번`Banana 클래스는 패키지명까지 함께 Chapter_13.com.study.Banana라고 적어주어야 합니다. 이러면 현재 폴더 아래 com 폴더, 그리고 come 폴더 아래 study 폴더에서 Banana 클래스를 찾아옵니다. 
+
+`4번` 객체가 정상적으로 만들어지기 때문에 메서드를 호출할 수 있습니다. 
+
+`Tip` 패키지명은 보통 삼 단계 이상으로 만듭니다. 일 단계로는 아직도 이름의 중복이 많이 발생할 수 있기 때문입니다. 그리고 패키지명은 다 소문자로 만듭니다. 그래야 클래스명과 구분할 수 있기 때문입니다. 임포트할 때 보면 소문자로 쓰여 있는 곳까지가 패키지명이 되고 마지막의 대문자로 시작하는 한 단어가 클래스명이 됩니다. 
+
