@@ -1,8 +1,5 @@
 package Chapter_13;
 
-// Banana 클래스를 Chapter_13.com.study 패키지에서 가져오기
-import Chapter_13.com.study.Banana;
-
 public class Ex02_PackageUse {
     public static void main(String[] args) {    // Java 프로그램의 시작점
         Apple apple = new Apple();              // Apple 클래스 객체 생성 - apple이라는 변수에 할당

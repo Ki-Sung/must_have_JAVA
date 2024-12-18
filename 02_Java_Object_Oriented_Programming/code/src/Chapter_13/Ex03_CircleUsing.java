@@ -1,8 +1,5 @@
 package Chapter_13;
 
-// 클래스 임포트
-import Chapter_13.com.company.area.Circle;
-
 public class Ex03_CircleUsing {
     public static void main(String[] args) {
         Chapter_13.com.company.area.Circle c1 = new Chapter_13.com.company.area.Circle(3.5);   // area 패키지의 Circle 클래스를 사용하여 반지름이 3.5인 원의 객체 c1을 생성
