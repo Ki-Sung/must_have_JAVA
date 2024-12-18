@@ -124,3 +124,41 @@ NoClassDefFoundError: Apple 에러가 납니다. 객체를 new(객체 생성)하
 
 `Tip` 패키지명은 보통 삼 단계 이상으로 만듭니다. 일 단계로는 아직도 이름의 중복이 많이 발생할 수 있기 때문입니다. 그리고 패키지명은 다 소문자로 만듭니다. 그래야 클래스명과 구분할 수 있기 때문입니다. 임포트할 때 보면 소문자로 쓰여 있는 곳까지가 패키지명이 되고 마지막의 대문자로 시작하는 한 단어가 클래스명이 됩니다. 
 
+## 3. 패키지로 문제 해결 
+이제 이름이 겹치는 상황은 가정하여 어떻게 구분하여 사용하는지 예제로 만들어보겠습니다. 
+
+우리 회사에 원의 넓이와 둘레를 구해달라는 개발 의뢰가 들어왔습니다. 마침 여유가 있는 부서가 두 군데 있었는데, area 부서와 circumference 부서 입니다. area 부서는 원의 넓이를 구하게 하고 circumference 부서는 원의 둘레를 구하게 했습니다. 이제 두 부서에서 클래스를 만들어오면 클래스를 이용하여 원의 넓이와 둘레를 구하기만 하면 될 것 같습니다. 그런데 문명의 혜택도 비슷하게 받았고, 공부도 비슷하게 한 사람들이기 때문에 작명 실력도 비슷한 것 같습니다. 
+
+두 부서 모두 클래스명을 Circle로 만들어온 겁니다. 그런데 두 부서에서 만들어온 클래스 코드가 다 길어서 어느 한쪽을 수정하라고 하기에는 무리가 있어 보입니다. 이럴 때 패키지를 적용할 필요가 생기게 되는 겁니다. 
+
+우리 회사는 기본적으로 패키지명을 다음과 깉이 사용하고 있습니다. 
+- com.company
+
+이제 여기에 각각의 부서를 붙여서 패키지명을 만듭니다. 원의 넓이를 구한 부서의 이름은 area이고 원의 둘레를 구한 부서의 이름은 length 입니다. 
+- area 부서: com.company.area 패키지명 사용
+- length 부서: com.company.circumference 패키지명 사용
+
+이제 최종적으로 클래스명을 다음과 같이 만듭니다. 
+- area 부서에서 만든 클래스: com.company.area.Circle
+- length 부서에서 만든 클래스: com.company.circumference.Circle
+
+이렇게 클래스에 패키지를 선언하고 폴더를 구성하고 사용하면 충돌이 일어나지 않게 됩니다. 
+
+직접 예제를 만들어보겠습니다. 다음과 같이 클래스를 추가합니다. 
+![242_package_example3_struceture](https://github.com/user-attachments/assets/00cffffe-fc8a-4ff2-81c8-98d3454debe5)
+
+다음과 같이 각각의 코드를 작성해줍니다. 
+
+- Chapter_13/come.company.area.Circle.java
+![243_compay_area_circle_example](https://github.com/user-attachments/assets/4fc1174c-c75c-4c8a-9b9f-88523cafa729)
+- Chapter_13/come.company.circumference.Circle.java
+![244_company_circum_example](https://github.com/user-attachments/assets/eee78485-41ad-442c-b9e9-9b7e819703c7)
+- Chapter_13/Ex03_CircleUsing.java
+![245_ex03_class_example_code](https://github.com/user-attachments/assets/6a532875-682a-480b-af54-4139db836d8a)
+![246_ex03_class_example_code_result](https://github.com/user-attachments/assets/746b850a-48da-4891-87f4-1b51a803acbb)
+
+`1번` 넓이를 구하는 Circle 클래스는 패키지명까지 함께 Chapter_13.com.company.area.Circle 이라고 적어주어야 합니다. 
+
+`2번` 둘레를 구하는 Circle 클래스는 패키지명까지 함께 Chapter_13.com.company.circumference.Circle 이라고 적어주어야 합니다. 
+
+처음에는 클래스명이 Circle로 같아 같은 폴더에서는 에러가 발생하겠지만, 이렇게 패키지를 이용하여 물리적인 폴더를 구분하여 저장하고 사용하면 서로 충돌이 발생하지 않게 됩니다. 대신 **패키지명.클래스명**으로 코드가 길어지는 사소한 단점이 있습니다. 
