@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd9c382a-0b5a-41ac-ba6d-353874ff06a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Chapter_13/Ex04_ImportUse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter_13/Ex02_PackageUse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chapter_13/Ex02_PackageUse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Chapter_13/Ex03_CircleUsing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Chapter_13/Ex03_CircleUsing.java" afterDir="false" />
-    </list>
+    <list default="true" id="bd9c382a-0b5a-41ac-ba6d-353874ff06a9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,17 +28,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/kisung.kim/Documents/workspace/kisung/must_have_JAVA/02_Java_Object_Oriented_Programming/code&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/Users/kisung.kim/Documents/workspace/kisung/must_have_JAVA/02_Java_Object_Oriented_Programming/code",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "configurable.group.build"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Ex01_MemoryInStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Chapter_10.Ex01_MemoryInStack" />
