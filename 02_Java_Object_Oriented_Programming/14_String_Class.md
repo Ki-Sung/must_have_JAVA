@@ -125,3 +125,44 @@ substring() 메서드로 문자열에서 특정 위치의 문자열을 잘라낼
 `1번`Banana 문자열이 시작하는 위치를 찾아옵니다. `2번`Orange 문자열이 시작하는 위치를 찾아옵니다.
 
 `3번`substring(5, 11)은 5부터 10까지의 문자열을 반환합니다. `4번`substring(11)은 11부터 문자열의 끝까지 문자열을 반환합니다. 
+
+### 4-4. 문자열의 길이 구하기 
+length() 메서드로 문자열의 길이를 알아볼 수 있습니다. 
+
+![262_string_length_example](https://github.com/user-attachments/assets/c5fa1b4b-c2b3-4b0d-b50d-633e0ef2cfa9)
+![263_string_length_example_result](https://github.com/user-attachments/assets/b6229558-9c18-43d4-9a2e-097bc5cfb982)
+
+`1번`length() 메서드를 이용하여 문자열의 길이를 구해옵니다.
+
+`2번`charAt() 메서드를 이용하여 문자열에서 해당 인덱스의 문자를 가져올 수 있습니다.
+
+`참고`: charAt() 메서드는 "8장 계산기 만들기" 프로젝트에서 사용자 키보드에 입력한 값을 비교할 때 사용해본적이 있습니다. 
+
+### 4-5. 기본 자료형의 값을 문자열로 바꾸기
+클래스 메서드를 이용하여 기본 자료형의 값을 문자열로 바꿀 수 있습니다. 다음은 메서드의 오버로딩 입니다. 
+```
+static String valueOf(boolean b)
+static String valueOf(char b)
+static String valueOf(double b)
+static String valueOf(float b)
+static String valueOf(int b)
+static String valueOf(long b)
+```
+
+다음은 double형 자료를 String.valueOf()에 인수로 주는 코드입니다. 
+```
+double e = 2.718281;
+String se = String.valueOf(e);
+```
+
+### 4-6. 자주 사용되는 String 클래스의 메서드들 
+앞에서 살펴본 메서드 외에도 String 클래스에는 다음과 같은 메서드들이 있습니다. 
+| 메서드 | 설명 | 
+|:---|:---|
+| boolean contains(String s) | 문자열 s를 포함하는지 조사합니다. |
+| boolean startsWith(String s) | 시작하는 문자열이 s인지 조사합니다. |
+| boolean endsWith(String s) | 끝나는 문자열이 s인지 조사합니다. |
+| boolean isEmpty() | 문자열의 길이가 0이면 true를 반환합니다. |
+| String toLowerCase() | 문자열을 모두 소문자로 변환합니다. |
+| String toUpperCase() | 문자열을 모두 대문자로 변환합니다. |
+| String trim() | 문자열 앞뒤에 있는 공백을 제거한 후 반환합니다. |
