@@ -39,7 +39,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Ex01_MemoryInStack">
     <configuration name="Ex01_MemoryInStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Chapter_10.Ex01_MemoryInStack" />
       <module name="code" />
