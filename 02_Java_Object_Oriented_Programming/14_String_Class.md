@@ -166,3 +166,21 @@ String se = String.valueOf(e);
 | String toLowerCase() | 문자열을 모두 소문자로 변환합니다. |
 | String toUpperCase() | 문자열을 모두 대문자로 변환합니다. |
 | String trim() | 문자열 앞뒤에 있는 공백을 제거한 후 반환합니다. |
+
+## 5. 문자열 대상 연산 
+System.out.println() 메서드를 사용할 때 "문자열 + 문자열" 등 문자열에 대한 연산을 이미 사용해보았습니다. 이 부분에 대해서 조금 더 살펴보겠습니다. 
+
+### 5-1. 문자열 대상 "+" 연산
+"문자열 + 문자열"에서 +는 산술 연산을 수행할 수 없기 때문에 다음과 같이 컴파일러에 의해 자동 변환이 일어나서 String 클래스의 concat() 메서드가 수행됩니다. 
+![264_string_concat_structure](https://github.com/user-attachments/assets/5b57ad09-5fd9-451f-81f9-0c7332ba9243)
+
+### 5-2. 문자열 대상 "+=" 연산
+문자열에 대한 복합 대입 연산도 다음과 같이 컴파일러에 의해 자동 수행됩니다. 
+![265_string_concat_structure_2](https://github.com/user-attachments/assets/f46ada96-8e01-4a31-9320-75f3043a7f15)
+
+### 5-3. 문자열과 기본 자료형의 "+" 연산
+문자열과 기본 자료형의 + 연산은 다음과 같은 복잡한 과정을 거치게 되지만 컴파일러가 자동으로 처리해줍니다.
+![266_string_concat_structure_3](https://github.com/user-attachments/assets/b4b75efc-2df6-4660-99c3-9790ea13843a)
+
+그리고 concat() 메서드처럼 반환형이 다시 String형이면 스트링 메서드를 계속 이어서 사용할 수 있습니다. 
+![267_string_concat_structure_4](https://github.com/user-attachments/assets/c2041539-8f68-4161-a36c-fdd6ccd2078f)
