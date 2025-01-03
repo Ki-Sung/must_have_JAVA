@@ -69,5 +69,7 @@ int형 배열을 만들고 값을 대입하고 참조하는 방법을 예제로 
 ![279_int_array_example_result](https://github.com/user-attachments/assets/4d0a4089-c9f2-4c22-89e8-b79a0e9f3acd)
 
 `1번`int형 데이터를 저장할 배열을 선언합니다.
+
 `2번`배열 요소에 접근합니다. 배열 요소는 일반 변수처럼 사용합니다. 값을 저장합니다.
+
 `3번`배열 요소에서 값을 참조해옵니다.
