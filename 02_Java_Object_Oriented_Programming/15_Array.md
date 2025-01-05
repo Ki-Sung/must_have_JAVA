@@ -73,3 +73,42 @@ int형 배열을 만들고 값을 대입하고 참조하는 방법을 예제로 
 `2번`배열 요소에 접근합니다. 배열 요소는 일반 변수처럼 사용합니다. 값을 저장합니다.
 
 `3번`배열 요소에서 값을 참조해옵니다.
+
+### 1-3. 배열 사용: String형
+String형 배열을 만들고 값을 대입하고 참조하는 방법을 예제로 살펴봅시다. 
+<img width="1016" alt="280_string_array_example" src="https://github.com/user-attachments/assets/679258da-a5ce-447b-910a-4a811b42e4a5" />
+<img width="1188" alt="281_string_array_example_result" src="https://github.com/user-attachments/assets/224302a7-f1f9-478d-a64c-85b255bbe5da" />
+
+`1번`String형 데이터를 저장할 배열을 선언합니다.
+`2번`문자열 리터럴로 대입하지 않고, new 연산자를 이용하여 새로운 문자열 객체를 만들어 변수에 대입하고 있습니다.
+`3번`배열 name의 요소 개수만큼 반복문으로 반복합니다. `4번`배열의 개별 요소에 저장된 값을 출력합니다. `5번`배열의 개별 요소에 저장된 값은 문자열 입니다. 각 문자열의 길이를 구해서 더해줍니다.
+
+`6번`name 배열에 저장되어 있는 모든 문자열의 총 길이를 출력합니다. 
+
+반복문에서 `5번`을 첫 번째만 풀어보면 다음과 같습니다. 
+<img width="1082" alt="282_string_array_result_1" src="https://github.com/user-attachments/assets/34f7a3ff-a80e-41f8-9dc4-9294d4d6e3db" />
+
+### 1-4. 배열 사용: 클래스형
+클래스형 배열을 만들고 값을 대입하고 참조하는 방법을 예제로 살펴봅시다. 
+
+<img width="1012" alt="283_class_array_example" src="https://github.com/user-attachments/assets/b0e273ea-0185-410d-8b56-20a8a09cdbf9" />
+<img width="1193" alt="284_class_array_example_result" src="https://github.com/user-attachments/assets/0ed9f123-1041-4e49-9b3d-f9b975c4dce5" />
+
+해당 예제는 사용자 정의 클래스인 BoxA4의 객체를 저장하는 배열을 생성하고, 해당 배열에 객체를 초기화한 뒤, 각 객체의 속성을 출력하는 기능을 보여줍니다. 
+
+`1번`BoxA4형 객체를 저장할 배열을 선언합니다.
+
+`2번`BoxA4 클래스의 생성자를 이용하여 객체를 만들고 배열의 개별 요소에 객체의 참조 값을 대입합니다.
+
+`3번`객체의 참조 변수 ar[ ]을 통해서 객체에 접근해 맴버 변수의 값을 가져와서 출력합니다. 
+
+### 1-5. 배열 사용: 매개변수, 반환형
+배열은 일반 변수처럼 메서드의 매개변수로 사용할 수도 있고 메서드의 반환형으로도 사용할 수 있습니다. 
+<img width="1015" alt="285_array_in_method_example" src="https://github.com/user-attachments/assets/e8cbf149-79cd-4def-b093-e1f263bc29de" />
+<img width="1191" alt="286_array_in_method_example_result" src="https://github.com/user-attachments/assets/f314e60e-27c6-4e60-9eeb-69c46f8fe8a1" />
+
+`3번`메서드의 반환형이 int형 배열입니다. `4번`매개변수로 들어온 값으로 배열 개수를 정합니다. `5번`배열 전체를 가리킬 때는 배열의 이름만 이용합니다. 앞의 예시에서 "한아름빌라"하고 건물의 이름만 얘기하는 것과 같습니다. 
+
+`1번`makeIntArray(5) 메서드 자리에 반환된 배열 객체가 들어오게 됩니다. 그리고 선언된 배열 변수에 해당 객체의 참조 값이 대입됩니다. `2번`배열을 인수로 넘겨줄 수도 있습니다. 역시 배열 전체를 가리키기 때문에 이름만 사용합니다. 
+
+`6번`배열의 요소 개수만큼 반복문을 실행합니다. `7번`배열의 요소별 접근은 인덱스값을 이용해서 객체를 참조하게 됩니다. 
