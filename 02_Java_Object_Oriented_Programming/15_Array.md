@@ -157,7 +157,7 @@ public static void main(String[] args)
 #### To-Do 01 Ex07_mainParameter 클래스를 다음과 같이 작성합니다. 
 ![291_main_parameter_example](https://github.com/user-attachments/assets/5c7758b9-3c4c-413f-8a72-42c6470a62e1)
 
-#### To-Do 02 우선 IntelliJ를 실행해봅니다. 아무런 결과가 출려되지 않습니다. 매개변수가 입력되지 않았기 때문입니다. 
+#### To-Do 02 우선 IntelliJ를 실행해봅니다. 아무런 결과가 출력되지 않습니다. 매개변수가 입력되지 않았기 때문입니다. 
 
 #### To-Do 03 main() 메서드에 매개변수를 넘겨주려면 실행창 > Modify Run Configuration을 선택합니다.
 ![292_run_edit_configuration](https://github.com/user-attachments/assets/183d7713-d2d9-433c-b887-48bc21fd9bce)
@@ -167,6 +167,7 @@ public static void main(String[] args)
 ![293_Input_arguments](https://github.com/user-attachments/assets/ffe3e4a7-549c-4636-afae-bf57aa1061bd)
 
 그리고 다시 실행을 누르면 다음과 같이 결과가 나옵니다. main() 메서드에 매개변수가 잘 전달되었음을 확인할 수 있습니다.
+
 ![294_Input_arguments_result](https://github.com/user-attachments/assets/e4052d53-2712-4082-a751-9e72aa3ae6f6)
 
 이제 IntelliJ에서 그냥 실행만 해도 이 클래스의 실행은 저 값이 계속 출력됩니다. 프로그램을 실행할 때마다 조금 전에 입력한 값이 매개변수로 main()에 전달되기 때문입니다. 더 이상 매개변수의 전달이 필요없으면 아까와 같이 창을 열여서 매개변수를 지워주면 됩니다. 
