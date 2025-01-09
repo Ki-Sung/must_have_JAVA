@@ -171,3 +171,26 @@ public static void main(String[] args)
 ![294_Input_arguments_result](https://github.com/user-attachments/assets/e4052d53-2712-4082-a751-9e72aa3ae6f6)
 
 이제 IntelliJ에서 그냥 실행만 해도 이 클래스의 실행은 저 값이 계속 출력됩니다. 프로그램을 실행할 때마다 조금 전에 입력한 값이 매개변수로 main()에 전달되기 때문입니다. 더 이상 매개변수의 전달이 필요없으면 아까와 같이 창을 열여서 매개변수를 지워주면 됩니다. 
+
+## 2. for ~ each 문 
+배열을 이용한 반복문을 사용하다 보면 for문 안에 항상 배열 길이만큼 반복을 하는 코드를 작성하게 됩니다. 이 부분은 컴파일러가 유추할 수 있는 부분입니다. 그래서 배열과 for문을 같이 사용할 때는 다음과 같이 기능을 제공해주고 있습니다. "향상된 기능의 for문(enhanced for문)"이라고 부릅니다.
+
+![295_enhanced_for_example](https://github.com/user-attachments/assets/20a477ed-cd2f-4357-b7c3-f85ab6e1510f)
+![296_enhanced_for_example_result](https://github.com/user-attachments/assets/50b05981-c23b-4867-9dd7-ddfceddc2076)
+
+`1번`배열의 초기화 값이 주어져 있으므로 배열 객체의 생성 부분을 생략할 수 있습니다.
+
+`2번` 배열에서 배열의 요소 하나씩을 자동으로 꺼내주면서 반복이 실행됩니다. 꺼내진 배열의 요소는 int e 변수에 대입됩니다. 
+
+for ~ each문에는 기본 자료형뿐 아니라 객체 자료형을 가진 배열도 사용할 수 있습니다. 예제를 통해 살펴보겠습니다. 
+
+![297_enhanced_for_object_example](https://github.com/user-attachments/assets/e91eb938-827f-4a07-8ad0-1fada28adf5f)
+![298_enhanced_for_object_example_result](https://github.com/user-attachments/assets/163ef4d6-dc7c-4213-a6dd-75ce1d439ef4)
+
+먼저 House 클래스를 정의합니다. 맴버 변수로 방번호를 저장할 houseNum과 이름을 저장할 name 변수를 가지고 있습니다. 변수가 다 private로 은닉화되어 있기 때문에 생성자를 통해 값을 세팅하고 게터를 통해서 값을 참조합니다. 
+
+`1번`배열을 선언합니다. 
+
+`2번`객체를 생성하고 배열의 개별 요소에 참조 값을 대입합니다. 
+
+`3번`향상된 기능의 for문을 통해 모든 요소를 하나씩 꺼내서 참조합니다. `4번`, `5번`에서 게터 메서드로 객체의 맴버 변수의 값을 꺼내서 값을 비교하고 출력합니다. 
