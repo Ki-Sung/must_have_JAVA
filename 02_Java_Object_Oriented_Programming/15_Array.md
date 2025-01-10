@@ -194,3 +194,56 @@ for ~ each문에는 기본 자료형뿐 아니라 객체 자료형을 가진 배
 `2번`객체를 생성하고 배열의 개별 요소에 참조 값을 대입합니다. 
 
 `3번`향상된 기능의 for문을 통해 모든 요소를 하나씩 꺼내서 참조합니다. `4번`, `5번`에서 게터 메서드로 객체의 맴버 변수의 값을 꺼내서 값을 비교하고 출력합니다. 
+
+## 3. 다차원 배열
+다차원 배열은 2차원, 3차원 배열 등으로 만들 수 있습니다. 이론적으로는 더 많은 차원의 배열을 만들어 사용할 수 있지만, 3차원까지는 큐브 형태로 사람이 아는 형태로 생각할 수 있지만 그 이상은 사람이 머리속으로 생각하기는 힘듭니다. 
+
+현실에서는 1차원, 2차원 배열을 주로 사용하고, 3차원 배열도 아주 가끔사용합니다. 
+
+### 3-1. 2차원 배열 
+지금까지 사용한 1차우너 배열은 다음과 같았습니다.
+```
+int [ ] arr1 = new int[3];
+```
+![300_1_dimensional_array](https://github.com/user-attachments/assets/d51a970e-337f-4b7d-b7d1-546fe13b0cb5)
+
+그냥 0호라고 말하면 어느 집의 0호인지 알 수 없어 한아름빌라 0호, 한아름빌라 1호 이런식으로 얘기한다고 했습니다. 이제 여러 층이 있어 지하 1호는 0-1호, 지하 2호는 0-2호, 지하 3호는 0-3호, 1층의 1호는 1-1호, 1층의 2호는 1-2호 등 앞쪽의 숫자로 층을 구분할 수 있습니다.
+
+배열도 이런 식 입니다. 배열에서도 앞쪽을 층으로 생각하고 뒤를 방으로 생각하면 됩니다. 선언은 다음과 같이 합니다. 
+```
+int[][] arr2 = new int[3][3];
+```
+![301_2_dimensional_array](https://github.com/user-attachments/assets/d49343c0-339c-48cf-b7bf-1f215d166312)
+![302_2_diemsional_array_2](https://github.com/user-attachments/assets/fb3f2160-3571-4791-86d8-357431b24f46)
+
+2차원 배열 요소 전체의 순차적 접근은 중첩된 반복문을 이용하면 쉽게 접근할 수 있습니다. 코드로 작성하면 다음과 같습니다. 
+![303_2_dimensional_array_example](https://github.com/user-attachments/assets/4b27eca3-b548-40c6-ba87-29ea96006e48)
+![304_2_dimensional_array_example_result](https://github.com/user-attachments/assets/6dc1fb4a-be5d-4d6c-aff9-894ffbbd4dd3)
+
+`1번`2차원 배열을 선언합니다. 
+
+`2번`바깥쪽 for문의 i의 값 한개당 내부의 for문이 한 바퀴씩 돕니다. `3번`각 배열 요소에 num 변수의 값을 대입합니다. `4번`num 변수의 값을 하나씩 증가시킵니다.
+
+`5번`중첩된 for문을 통해 2차원 배열의 모든 요소의 값을 가져와서 출력합니다.
+
+### 3-2. 2차원 배열의 실제 구조
+```
+int[][] arr3 = new int[3][4]
+```
+
+위 코드는 다음처럼 새 배열의 각각 길이가 4개인 배열을 가지고 있는 구조입니다.
+
+![305_2_dimensional_array_34](https://github.com/user-attachments/assets/4c389a0b-6e07-44f7-8831-3d75d0c3d9bc)
+
+더 구체적으로 그리면 다음과 같습니다.
+![306_2_dimensional_array_structure](https://github.com/user-attachments/assets/96b55817-8efe-4e81-8033-41b9adfb4a03)
+
+이런 구조이기 때문에 자바에서는 다음과 같은 초기화가 가능합니다. 
+![307_2_dimensional_array_structure_2](https://github.com/user-attachments/assets/fdd78a03-a173-4773-ab2b-801334b499de)
+
+![308_2_dimensional_array_example_2](https://github.com/user-attachments/assets/e753e621-1a73-4bc7-a1a5-b55a2bab6d58)
+![309_2_dimensional_array_example_2_result](https://github.com/user-attachments/assets/9049b833-ef34-452a-89a6-b2c88028b511)
+
+`1번`부분적으로 채워진 2차원 배열을 만들고 초기화합니다.
+
+`2번`바깥쪽 배열의 크기를 이용해 반복문을 반복합니다. `3번`바깥쪽 배열의 요소 하나당 배열의 크기를 구해서 반복문을 반복합니다. `4번`배열의 개별 요소의 값을 구해와서 출력합니다.
