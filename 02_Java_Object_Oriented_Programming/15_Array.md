@@ -247,3 +247,62 @@ int[][] arr3 = new int[3][4]
 `1번`부분적으로 채워진 2차원 배열을 만들고 초기화합니다.
 
 `2번`바깥쪽 배열의 크기를 이용해 반복문을 반복합니다. `3번`바깥쪽 배열의 요소 하나당 배열의 크기를 구해서 반복문을 반복합니다. `4번`배열의 개별 요소의 값을 구해와서 출력합니다.
+
+## 4. 배열 관련 유틸리티 메서드 
+여기서는 배열을 편하게 사용하게 해주는 여러 메서드를 알아보겠습니다. 
+
+### 4-1. 배열의 초기화 메서드 
+앞에서도 배열을 선언할 때 초기화 값을 이용하여 초기화를 했습니다. 그러나 배열이 엄청 클 때는 값을 직접 일일이 지정해주는 초기화 방식은 무리입니다. 그래서 배열의 초기화는 다음의 메서드를 이용하게 됩니다. 
+
+다음 클래스에 있는 메서드를 사용하여 원하는 값으로 배열 전부 또는 일부를 채울 수 있습니다. 
+```
+// 두 번째 매개변수로 전달된 값으로 배열 초기화
+public static void fill(int[] a, int val)
+
+// 인덱스 fromIndex ~ (toIndex-1) 범위까지 val값으로 배열 초기화
+public static void fill(int[] a, int fromIndex, int toIndex, int val)
+```
+&rarr; java.util.Arrays 클래스에 정의되어 있는 메서드 
+
+### 4-2. 배열의 복사 Array 클래스 
+배열 복사는 다음의 두 클래스에 있는 메서드를 사용할 수 있습니다. 
+```
+// original에 전달된 배열을 첫 번째 요소부터 newLength 길이만큼 복사 
+public static int[] copyOf(int[] original, int newLength)
+
+// original에 전달된 배열을 인덱스 from 부터 to 이전 요소까지 복사
+public static int[] copyOfRange(int[] original, int from, int to)
+```
+&rarr; java.util.Arrays 클래스에 정의되어 있는 메서드
+
+```
+// 배열 src의 srcPos에서 배열 dest의 destPos로 length 길이만큼 복사
+public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+```
+&rarr; java.util.System 클래스에 정의되어 있는 메서드
+
+![310_array_copy_example](https://github.com/user-attachments/assets/e456556d-1af8-4782-91f0-82bba48e729b)
+![311_array_copy_example_result](https://github.com/user-attachments/assets/642ec105-804e-4492-a5c7-80c8f844ba54)
+
+`1번`java.util.Arrays 클래스를 임포트합니다. 
+
+`2번`길이가 10인 arr1 배열은 0으로 초기화됩니다. `3번`길이가 8인 arr2 배열은 0으로 초기화됩니다. 
+
+`4번`Arrays 클래스의 스태틱 메서드인 fill() 메서드를 이용하여 지정한 값으로 배열을 채워줄 수 있습니다.
+
+`5번`System 클래스의 스태틱 메서드인 arraycopy() 메서드를 이용하여 기존에 만들어진 배열에 부분 복사를 할 수 있습니다.
+
+`6번`Arrays 클래스의 스태틱 메서드인 copyOfRange() 메서드가 배열에서 부분 복사하여 반환한 객체를 배열에 대입할 수 있습니다. 
+
+System.arraycopy()는 기존에 만들어진 배열에 복사한 값을 넣어주는 것이고, Arrays.copyOfRange()는 배열에서 부분 복사한 값을 이용하여 배열 객체를 만들어 반환하고 배열 변수에 대입을 해주는 차이점이 있습니다. 
+
+### 4-3. 배열 내용 비교 
+Arrays 클래스에는 배열을 비교해주는 equals() 메서드가 있습니다. 두 배열에 저장된 데이터의 수, 순서 그리고 내용이 같을 때 true를 반환합니다(배열의 길이가 다르면 false를 반환합니다).
+
+![312_array_equalse_example](https://github.com/user-attachments/assets/3ae05907-4eeb-4cb5-9bbf-22389863b9df)
+![313_array_equalse_example_result](https://github.com/user-attachments/assets/e7e7e4a0-69b7-4d93-97b0-458934bab0c6)
+
+`1번`java.util.Arrays 클래스를 임포트합니다. 
+
+`2번`배열을 선언하고 값을 직접 대입하여 초기화해줍니다. `3번`Arrays 클래스의 copyOf() 메서드를 이용하여 배열을 복사합니다. `4번`두 배열의 내용을 비교합니다. 
+
