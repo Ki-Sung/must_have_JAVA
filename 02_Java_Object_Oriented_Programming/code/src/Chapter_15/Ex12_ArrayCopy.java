@@ -11,10 +11,10 @@ public class Ex12_ArrayCopy {
         int[] arr2 = new int[8];                // arr2라는 이름의 정수형 배열 생성 - 8개 요소를 가지며, 초기값은 0
 
         // 배열 arr1을 3으로 초기화
-        Arrays.fill(arr1, 3);               // Arrays.fill 메소드를 사용하여 arr1의 모든 요소를 3으로 초기화
+        Arrays.fill(arr1, 3);               // Arrays.fill 메서드를 사용하여 arr1의 모든 요소를 3으로 초기화
 
         // 배열 arr1을 arr2로 부분 복사
-        System.arraycopy(arr1, 0, arr2, 3, 4);     // System.arraycopy 메소드를 이용하여 arr1의 0번 인덱스 부터 4개의 요소를 arr2의 3번 인덱스 부터 복사
+        System.arraycopy(arr1, 0, arr2, 3, 4);     // System.arraycopy 메서드를 이용하여 arr1의 0번 인덱스 부터 4개의 요소를 arr2의 3번 인덱스 부터 복사
         // -> 즉, arr1[0], arr1[1], arr1[2], arr1[3]의 값이 arr2[3], arr2[4], arr2[5], arr2[6]에 복사됨
 
         // arr1 모든 요소 출력
