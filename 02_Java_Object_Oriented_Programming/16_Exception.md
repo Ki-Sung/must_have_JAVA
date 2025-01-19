@@ -131,3 +131,38 @@ finally
 
 실행을 하고 콘솔청에서 문자 A를 입력해봅니다. `2번`에서 입력 시 예외가 발생하고, `8번`catch문이 실행되고 `9번`에서 에러 메시지를 얻어서 출력해줍니다. 결과에서 보듯이 `4번`과 `5번`코드는 실행되지 않았습니다. 
 ![324_try_catch_example_result2](https://github.com/user-attachments/assets/68ecc1bf-2b2e-4489-8b45-821f203d7591)
+
+### 3-2. finally 
+예외가 발생해도 바로 앞 예제의 `5번`을 무조건 실행하고 싶다면 다음과 같이 finally문을 추가하고 그쪽으로 코드를 이동해주어야 합니다. 
+
+<img width="898" alt="326_finally_example" src="https://github.com/user-attachments/assets/7322f7e0-d0f3-44c3-aaf4-daf0dcb75f7c" />
+
+
+예외가 발생해도 반드시 실해되어야 하는 문장이라면 위 코드와 같이 finally문 안에 작성을 해주면 됩니다. try문을 실행하다 예외가 발생하면 예외 발생 지점에서 catch문으로 실행이 이동하게 되지만 catch 영역이 실행되고 맨 마지막에 finally문의 내용이 반드시 실행됩니다. 
+
+실행을 하고 콘솔창에 문자 A를 입력해봅니다. `1번`이나 `2번`에서 입력 시 예외가 발생해도 `3번`은 반드시 실행되면서 내용이 출력됩니다.
+
+<img width="900" alt="327_finally_example_result" src="https://github.com/user-attachments/assets/ad97864e-e9cd-41a7-b743-9c7917b7ff9f" />
+
+### 3-3. 예외처리 합치기
+예외 상황에 대해서 catch문 하나당 예외 하나를 처리할 수도 있지만, catch문 하나에서 여러 예외를 한꺼번에 처리할 수도 있습니다. 
+<img width="883" alt="328_catch_concat_example" src="https://github.com/user-attachments/assets/c7a314ed-34ab-48dd-ab4e-a567a4337bbb" />
+<img width="870" alt="329_catch_concat_example_result" src="https://github.com/user-attachments/assets/a386de1d-7a0f-4fe0-b3cc-1ca97b2c3e5d" />
+
+실행을 하고 콘솔창에서 문자 A를 입력해보니 예상대로 예외 처리가 작동합니다. 
+
+`1번` 여러 Exception을 버티컬 바(`|`)를 이용해 지정하고 있습니다(`|`는 or 연산자입니다).
+
+`2번` 여러 상황에 대한 자세한 메시지 처리 대신, 모든 상황을 간단한 메시지로 한 번에 처리하고 있습니다. 
+
+`3번` finally를 꼭 통하지 않더라도 try ~ catch 문에 의해 비정상적인 종료는 방지되었으므로 그 뒤에 이렇게 사용하면 이 내용을 예외가 발생해도 출력할 수 있습니다.
+
+### 3-4. 모든 예외 한 번에 처리하기 
+어떤 예외가 발생할지 모를 때 모든 예외의 최상위 클래스를 이용해서 예외를 처리해줄 수 있습니다. 클래스의 다형성에서 배운 '자식 클래스의 객체는 부모 클래스형의 변수에 대입할 수 있다'가 적용되어 모든 예외를 처리할 수 있게 됩니다.
+
+<img width="899" alt="330_exception_example" src="https://github.com/user-attachments/assets/5cae4730-ef94-4905-b884-4a8cdc51bfb3" />
+<img width="880" alt="331_exception_example_result" src="https://github.com/user-attachments/assets/29d84169-54c5-4741-84a7-5290eca54971" />
+
+A를 입력한 결과 예상대로 예외 처리가 작동합니다. 
+
+예외를 한 번에 다 처리하려면 `1번`의 Exception 클래스나 Throwable 클래스를 사용할 수 있습니다. 모든 예외 Exception 클래스를 상속받은 것이기 때문에 다형성에서 배운 것 처럼 수많은 예외 클래스들은 `1번`의 매개변수 Exception e에 대입이 될 수 있습니다.
