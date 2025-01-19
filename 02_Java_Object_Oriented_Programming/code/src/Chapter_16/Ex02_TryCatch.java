@@ -31,7 +31,7 @@ public class Ex02_TryCatch {
 
         // 예외 처리 2
         } catch (InputMismatchException e) {            // try 블록에서 InputMismatchException이 발생하면 해당 블록으로 이동 - 사용자가 정수가 아닌 값을 입력한 경우 발생
-            System.out.println(e.getMessage());         // 빌셍힌 예외 메시지 출력
+            System.out.println(e.getMessage());         // 발생한 예외 메시지 출력
             //e.printStackTrace();                      // 주석처리 - 만약 주석을 해제하면 예외의 스택 트레이스를 출력하여, 예외 발생 원인을 더 자세하게 확인할 수 있음
         }
     }
