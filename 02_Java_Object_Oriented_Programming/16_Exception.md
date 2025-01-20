@@ -166,3 +166,40 @@ finally
 A를 입력한 결과 예상대로 예외 처리가 작동합니다. 
 
 예외를 한 번에 다 처리하려면 `1번`의 Exception 클래스나 Throwable 클래스를 사용할 수 있습니다. 모든 예외 Exception 클래스를 상속받은 것이기 때문에 다형성에서 배운 것 처럼 수많은 예외 클래스들은 `1번`의 매개변수 Exception e에 대입이 될 수 있습니다.
+
+## 4.예외 처리 미루기(던지기)
+예외가 발생한 메서드에서 처리하지 않고 메서드를 호출한 곳으로 예외를 던져 메서드를 호출한 부분에서 예외를 처리하는 방법입니다. 
+![332_exception_throw_structure](https://github.com/user-attachments/assets/1ba374d8-ca0d-40ba-a3db-4f6b1abced65)
+
+myMethod2에서 try ~ catch문으로 예외를 직접 처리할 수도 있지만 예외 처리를 미룰 수도 있습니다. 그러면 myMethod2()를 호출한 myMethod()에서 예외를 처리해야 합니다. 
+
+myMethod()에서도 예외 처리를 미루면 예외는 main()으로 전달됩니다. main()에서도 예외 처리를 미루면 예외는 JVM으로 전달되고 JVM은 프로그램을 종료시킵니다. 
+
+### 4-1. 예외처리 미루기 
+예외 처리가 어떻게 미루어지는지 예제를 통해 살펴보겠습니다. 
+![333_exception_throw_example](https://github.com/user-attachments/assets/81c17461-c58b-4e92-98aa-a39acbd81402)
+![334_exception_throw_example_result](https://github.com/user-attachments/assets/7a6cc7b1-3af4-4453-ad5f-362b446381d6)
+
+`1번`에서 0으로 나누기 때문에 예외가 발생합니다. 그런데 예외에 대한 처리를 하지 않았기 때문에 myMethod2()를 호출한 myMethod()로 예외가 던져집니다. 그런데 myMethod()에서도 예외 처리가 안 되어 있기 때문에 예외는 myMethod() 메서드를 호출한 main()으로 다시 던져집니다. main()에서도 예외에 대한 처리가 되어 있지 않기 때문에 예외를 자바 가상 머신에 던지게 됩니다. 이 라인에서 프로그램은 종료하게 되고, 그래서 `2번`은 실행되지 못합니다. 
+
+콘솔창의 에러를 보면 에러가 발생한 지점을 보여주는 at에서 처음에 9번 라인에서 에러가 발생했다고 표시하고 있습니다. 그리고 5번 라인, 그다음으로 13번 라인에 에러라고 표시하고 있습니다. 예외가 던져진 지점하고 일치 합니다. 
+
+### 4-2. Throwable로 잡기
+던져진 예외를 처리하려면 어떤 예외가 올지 모르므로 catch문에서 앞선 Exception을 사용할 수도 있겠지만, 던져진 것을 처리한다는 의미로 Exception의 상위 객체인 Throwable을 사용할 수도 있습니다.
+
+![335_catch_throwable_example](https://github.com/user-attachments/assets/8c18ec43-5119-4846-a076-b71f8f41bfee)
+![336_catch_throwable_example_result](https://github.com/user-attachments/assets/c3bc5aa0-ee77-46ea-a7bd-28edd03f8de8)
+
+`2번`숫자가 아닌 글자들을 입력받으면 예외가 발생합니다. `3번`에서는 `2번`에서 정수 0이 입력되면 나누기를 하다가 예외를 발생합니다. 
+
+try ~ catch문을 이용하여 예외를 처리하지는 않았지만 `2번`과 `3번`에서 예외가 발생하면 메서드를 호출한 지점으로 예외가 전달됩니다. 이렇게 전달된 예외는 최종적으로 `5번` catch문 안 Throwable e 매개변수에 대입됩니다. 
+
+에러를 볼 때 다음과 같이 콘솔창에서 에러의 맨 아래줄부터 위로 올라오면서 해당 줄의 코드를 살펴보면 에러가 발생한 지점을 찾을 수 있습니다. 
+
+맨 처음 20번 라인에서 에러가 발생했습니다. myMethod() 메서드를 호출하는 부분입니다. 
+
+그리고 7번 라인에서 에러가 발생했습니다. myMethod() 메서드 안에서 myMethod2() 메서드를 호출하는 부분입니다. 그리고 14번 라인에서 에러가 발생합니다. myMethod2() 메서드 안에서 입력받은 수로 나누기를 하는 부분입니다. 
+
+이렇게 예외가 던져진 것을 반대로 찾아 가면 에러가 발생한 지점을 찾을 수 있습니다.
+
+
