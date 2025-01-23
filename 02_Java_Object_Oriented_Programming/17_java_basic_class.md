@@ -103,4 +103,32 @@ String 클래스의 경우와 마찬가지로 우리 객체를 출력할 때 지
 
 이제는 System.out.println() 메서드에 매개변수로 객체 자체를 넘겨도 객체가 가지고 있는 문자열이 출력됩니다. 
 
+### 2-2. equals() 메서드 
+Object 클래스에 정의되어 있는 equals() 메서드 원형은 다음과 같습니다. 
+```
+public boolean equals(Object obj) {
+    return (this == obj);
+}
+```
 
+자신과 매게변수로 들어온 객체의 주솟값 자체를 비교하여 같은지 아닌지를 반환합니다. 
+
+이러면 참조하고 있는 변수의 id(주솟값)끼리 비교가 됩니다. 이 메서드도 메서드의 원형 그대로 사용하는 것은 의미가 없고, 보통은 오버라이딩으로 재정의하여 객체 안 변수의 값끼리 비교하는데 많이 사용됩니다. 
+
+![354_equals_example1](https://github.com/user-attachments/assets/66286b4f-8889-4013-a29c-d1519ca39495)
+![355_equals_example1_result](https://github.com/user-attachments/assets/555ac191-86f7-407f-bc9e-2bd46ec1debe)
+
+`1번`새로운 객체를 만들고 변수에 대입합니다. 
+
+`2번`새로운 객체를 만들고 변수에 대입합니다.
+
+`3번`두 객체를 비교합니다. Book5 클래스에는 equals 메서드가 재정의되어 있지 않기 때문에 Object 메서드에서 상속받은 그대로 사용하게 됩니다. 그 결과 주소 비교를 하게 되고 둘은 서로 다른 주소에 생성된 객체이기 때문에 false를 반환합니다. 
+
+이제 우리가 비교해보고 싶은 내용 비교를 할 수 있도록 다음과 같이 equals() 메서드를 오버라이드해서 재정의하고 다시 실행해봅시다. 예제는 새로 만듭니다. 
+
+![356_equals_example2](https://github.com/user-attachments/assets/b37dca81-7935-4bdc-ac48-0b433d83af8d)
+![357_equals_example2_result](https://github.com/user-attachments/assets/55330f3b-b0ca-4f7a-bd2d-c36f553b7178)
+
+`1번`Object 클래스의 equals() 메서드를 오버라이드하여 Book6 클래스 안의 author 변수의 값을 비교하도록 오버라이드로 재정의했습니다. 
+
+`2번`이제 equals() 메서드는 객체의 주소를 비교하는 것이 아니고 객체 안에 들어 있는 String 변수의 가ㅓㅂㅅ을 비교하여 그 결과를 반환합니다.
