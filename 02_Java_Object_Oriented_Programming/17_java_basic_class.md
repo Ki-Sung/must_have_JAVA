@@ -60,3 +60,47 @@ Object 클래스의 메서드는 다음과 같습니다. 상속 계층을 보여
 | public Object clone() | 객체의 사본을 생성합니다. | 
 
 Object 클래스의 메서드 중에는 재정의할 수 있는 메서드도 있고, 그렇지 않은 메서드도 있습니다. 여기서는 자주 재정의하여 사용하는 메서드 두 개만 살펴보겠습니다. 
+
+### 2-1. toString() 메서드
+Object 클래스에 정의되어 있는 toString() 메서드의 원형은 다음과 같습니다. 
+```
+public String toString() {
+    return getClass().getName() + "0" + Integer.toHexString(hashCode());
+}
+```
+
+생성된 객체의 클래스명과 해시 코드를 보여줍니다. 이 메서드는 메서드의 원형 그대로 사용하는 것은 의미가 없고, 보통은 객체 정보를 String으로 바꿔서 사용할 때 많이 사용됩니다. 우리가 자주 사용하는 String 클래스에는 이미 오버라이딩하여 재정의를 해놓고 있습니다. String 클래스는 클래스명과 해시 코드를 보여주는 대신 안에 들어 있는 문자열 내용을 반환해줍니다. 
+
+예제를 통해서 살펴보겠습니다. 
+
+![348_toString_example1](https://github.com/user-attachments/assets/21c7fe91-b943-4c1f-877a-97452ed915e0)
+
+System.out.println() 메서드는 매개변수로 들어오는 객체의 toString() 메서드를 내부적으로 호출해서 반환받는 값을 출력해줍니다. 즉, 오버라이딩으로 미리 재정의되어 있지 않았다면 상속 받았던 원형 그대로 toString() 메서드가 호출되고, 그 결과로 객체의 클래스명과 해시 코드를 출력합니다. 
+
+그러나 String 클래스는 오버라이딩으로 미리 재정의가 되어 있었기에 다음과 같은 결과를 출력합니다. 
+
+![349_toString_example1_result](https://github.com/user-attachments/assets/759de717-00d7-44f9-a443-f6db8258c646)
+
+비교를 위해 우리가 만든 객체를 출력해보겠습니다. 예제에 다음과 같이 작성하고 실행합니다. 
+
+![350_toString_example2](https://github.com/user-attachments/assets/4683ab39-87ac-42ad-b7dd-f95ed4f748c8)
+![351_toString_example2_result](https://github.com/user-attachments/assets/3f8664e5-2429-4b14-8160-191f548792cb)
+
+`1번`우리가 만든 클래스를 이용하여 객체를 생성합니다. `2번`참조 변수의 맴버 변수의 값을 출력합니다. `3번`객체 자체를 출력합니다. 
+
+`3번`에서 System.out.println() 메서드는 객체 자체가 매개변수로 주어졌기 때문에 객체 안의 toString() 메서드를 찾습니다. 재정의된 메서드가 아니고 상속받은 그대로의 원형이 있기 때문에 클래스명과 해시 코드가 출력될 겁니다. 
+
+String 클래스의 경우와 마찬가지로 우리 객체를 출력할 때 지금처럼 **클래스명@해시 코드** 대신 그 안의 author 변수의 값을 출력하고 싶습니다. 
+
+이럴 때 Object 객체의 toString() 메서드를 오버라이딩으로 재정의하여 사용하면 됩니다. 
+
+![352_toString_example3](https://github.com/user-attachments/assets/70f7ea2f-67d4-4299-aba6-0b67358ffeed)
+![353_toString_example3_result](https://github.com/user-attachments/assets/1fd0add5-6fe9-4148-b90c-0b077ec21e73)
+
+`1번`toString() 메서드를 오버라이딩하여 author 변수의 값을 반환하도록 재정의합니다.
+
+`2번`참조 변수를 이용하여 객체의 맴버 변수의 값을 가져와서 출력합니다. `3번`참조 변수를 이용하여 객체 자체를 출력합니다. 
+
+이제는 System.out.println() 메서드에 매개변수로 객체 자체를 넘겨도 객체가 가지고 있는 문자열이 출력됩니다. 
+
+
