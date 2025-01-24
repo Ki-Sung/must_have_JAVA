@@ -132,3 +132,41 @@ public boolean equals(Object obj) {
 `1번`Object 클래스의 equals() 메서드를 오버라이드하여 Book6 클래스 안의 author 변수의 값을 비교하도록 오버라이드로 재정의했습니다. 
 
 `2번`이제 equals() 메서드는 객체의 주소를 비교하는 것이 아니고 객체 안에 들어 있는 String 변수의 가ㅓㅂㅅ을 비교하여 그 결과를 반환합니다.
+
+## 3. 래퍼 클래스
+자바는 기본 데이터형(정수형, 문자형, 논리형)에 대응하는 클래스를 마련해놓았습니다. 이 클래스들은 래퍼 클래스(wrapper class)라고 합니다. 래퍼 클래스란 기본 자료형에 대해서 객체로서 인식되도록 '포장'을 했다는 뜻입니다. 이때 단순히 객체화만 한 것이 아니고 다양한 메서드도 추가했습니다. 
+
+| 메서드 | 설명 | 
+|:---|:---|
+| boolean | Boolean |
+| byte | Byte | 
+| char | Character | 
+| int | Integer | 
+| long | Long | 
+| float | Float | 
+| double | Double |
+
+기본 자료형 대신 래퍼 클래스를 사용하는 이유는 다음과 같습니다.
+- 클래스가 제공하는 편리한 메서드 사용(값 변환, 형 변환, 진법 변환)
+- 클래스가 제공하는 상수 사용(MIN_VALUE, MAX_VALUE)
+- 메서드 매개변수의 형이 Object여서 기본 자료형을 사용 못하고 클래스 형태인 래퍼로 남겨야 할 때 사용(컬렉션 프레임워크)
+
+### 3-1. Number 클래스 
+java.lang.Number 클래스는 모든 수치형 래퍼 클래스가 상속하는 추상 클래스입니다. 그래서 Number 클래스를 상속한 래퍼 클래스는 모두 다음의 추상 메서드가 다 구현이 되어 있습니다. 
+- byteValue()
+- shortValue()
+- intValue()
+- longValue()
+- floatValue()
+- doubleValue()
+
+수치형 래퍼 클래스인 Byte, Short, Integer, Long, Float, Double에서 이 메서드들을 사용하면 다른 형으로 변환한 값을 얻을 수 있습니다. 즉 래퍼 객체에 저장된 값을 원하는 기본 자료형 값으로 변환할 수 있습니다. 
+
+수치형을 다른 수치형 자료로 형변환하는 메서드를 사용해봅시다. 
+
+![358_number_class_example](https://github.com/user-attachments/assets/fde6cd12-789d-4fcc-af25-ebba9ef8c474)
+![359_number_class_example_result](https://github.com/user-attachments/assets/1cfe945a-7e06-4e8e-8b15-dbceec1cb4b4)
+
+자바 4까지는 `1번`처럼 생성자에 기본 데이터형의 값 또는 변수를 매개변수로 받았습니다(Integer() 생성자는 디프리케이트(더 이상 사용하지 않음)되었습니다).
+
+자바 5부터는 `2번`처럼 클래스의 스태틱 메서드를 이용합니다. `3번`래퍼 클래스의 객체는 지정된 값을 원하는 기본 자료형값으로 변환할 수 있습니다. 
