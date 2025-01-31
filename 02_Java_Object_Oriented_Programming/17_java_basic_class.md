@@ -212,3 +212,51 @@ boolean c = a.equals(b);
 
 `5번`정수를 2진수로 표현합니다. `6번`정수를 8진수로 표현합니다. `7번`정수를 16진수로 표현합니다.
 
+### 3-5. 박싱과 언박싱
+박싱은 인스턴스의 생성으로 이뤄지지만 언박싱은 래퍼 클래스에 정의된 메서드를 호출해 이뤄집니다. 
+![364_boxing_unboxing_structure](https://github.com/user-attachments/assets/3af2fd61-273a-4fa3-a324-61261542d80f)
+
+래퍼 객체들은 담고 있는 값을 수정하지 못합니다. 기본 자료형의 값을 포장해서 만든 것이기 때문에 원재료를 바꿀 수 없는 겁니다. 
+
+예를 들어보겠습니다. 박싱의 경우 int 타입의 변수를 Integer 객체로 변환할 때 사용합니다.
+```
+int primitiveInt = 10;
+Integer boxedInt = Integer.valueOf(primitiveInt); // 박싱
+```
+
+언박싱의 경우 Integer 객체를 int 타입의 변수로 변환할 때 사용합니다. 
+```
+Integer boxedInt = Integer.valueOf(10);
+int primitiveInt = boxedInt.intValue(); // 언박싱
+```
+
+다음의 예제를 살펴보겠습니다.
+![365_boxing_unboxing_example](https://github.com/user-attachments/assets/81e8f9ff-c0d1-46cb-a78a-aa45005a615a)
+![366_boxing_unboxing_example_result](https://github.com/user-attachments/assets/1613623a-ecd1-4d3f-96eb-490f221fe10e)
+
+`1번`기본 자료형의 값이 박싱에 의해 클래스 자료형으로 대입됩니다.
+
+`2번`래퍼 클래스의 메서드를 통해 기본 자료형의 값을 구해옵니다. 언박싱이 일어납니다. 
+
+`3번`값을 출력합니다. 래퍼 클래스는 toString() 메서드가 오버라이으로 재정의되어 있기 때문에 기본형 자료의 값이 출력됩니다. 
+
+`4번`래퍼 클래스의 값을 증가시키려면 언박싱으로 값을 구해오고 더한 다음에 다시 박싱으로 객체를 만들어 대입해야 합니다. 
+
+### 3-6. 오토 박싱과 오토 언박싱
+다음과 같이 오토 박싱과 오토 언박싱이 이루어지기도 합니다.
+![367_autoboxing_autounboxing_example](https://github.com/user-attachments/assets/11d59b3f-dca1-4561-9b75-fc82905c71ca)
+![368_autoboxing_autounboxing_example_result](https://github.com/user-attachments/assets/fab1540f-8b53-4d1a-9872-44c7182bac15)
+
+`1번`기본 자료형을 바로 래퍼 클래스형의 변수에 대입할 수 있습니다. 오토 박싱이 일어납니다.
+
+`2번`래퍼 클래스형 변수를 기본 자료형의 변수에 대입할 수 있습니다. 오토 언박싱이 일어납니다.
+
+다른 예제 하나를 더 보겠습니다.
+![369_autoboxing_autounboxing_example2](https://github.com/user-attachments/assets/698cf8a8-7c6f-4325-b614-6b86c1413477)
+![370_autoboxing_autounboxing_example2_result](https://github.com/user-attachments/assets/5133fb5f-ff71-4024-9c6b-2d3d5777e71f)
+
+`1번`값이 대입되면서 오토 박싱이 일어납니다. 
+
+`2번`래퍼 클래스도 증감 연산자 사용이 가능합니다. 다만 주석의 내용처럼 복잡한 연산이 일어납니다. `3번`래퍼 클래스도 복합 대입 연산자 사용이 가능합니다. 다만 주석의 내용처럼 복잡한 연산이 일어납니다. 
+
+`4번`래퍼 클래스와 기본형 자료의 연산은 오토 언박싱이 일어난 후 연산이 이루어집니다. `5번`래퍼 클래스와 기본형 자료의 연산은 오토 언박싱이 일어난 후 연산이 이루어집니다. 그 후 래퍼 클래스에 값이 대입되기 위해서 박싱이 일어납니다. 
