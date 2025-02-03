@@ -262,3 +262,38 @@ int primitiveInt = boxedInt.intValue(); // 언박싱
 `4번`래퍼 클래스와 기본형 자료의 연산은 오토 언박싱이 일어난 후 연산이 이루어집니다. `5번`래퍼 클래스와 기본형 자료의 연산은 오토 언박싱이 일어난 후 연산이 이루어집니다. 그 후 래퍼 클래스에 값이 대입되기 위해서 박싱이 일어납니다. 
 
 참고로 자바 5 이후로는 박싱과 언박싱을 자동으로 할 수 있어 코드가 보다 간결해졌습니다.
+
+## 4. Math 클래스
+Math 클래스에 정의된 메서드는 모두 static으로 선언되어 있습니다. 즉 Math는 기능 제공이 목적일 뿐, 인스턴스 생성을 목적으로 정의된 클래스는 아닙니다.
+
+Math 클래스에서 제공하는 다양한 메서드 사용법을 코드로 알아봅시다.
+
+![371_math_use_example](https://github.com/user-attachments/assets/ea79e553-d011-4737-a7c0-49e32fd03305)
+![372_math_use_example_result](https://github.com/user-attachments/assets/c75ada3b-7f06-494a-b06b-0af69b18c45a)
+
+Math 클래스에서 제공하는 메서드 사용법만 다루어 자세한 설명은 해당 예제 코드 주석을 통해 설명해 놓았습니다.
+
+## 5. Random 클래스
+Random은 임의의 랜덤 값을 만들어낼 때 사용하는 클래스입니다. 
+```
+Random rand = new Random();
+```
+
+다음처럼 다양한 메서드가 제공되는데, 보통의 경우 nextInt(int bound) 메서드를 이용합니다. 
+```
+public boolean nextBoolean()      // boolean형 난수 반환
+public int nextInt()              // int형 난수 반환
+public long nextLong()            // long형 난수 반환
+public nextInt(int bound)         // 0이상 bound 미만 범위의 int형 난수 반환
+public float nextFloat()          // 0.0 이상 1.0 미만의 float형 난수 반환
+public double nextDouble()        // 0.0 이상 1.0 마민의 double형 난수 반환
+```
+
+임의의 수를 얻는데 사용하는 클래스이지만 발표 등에서 준비한 자료와 같은 값을 얻기 위해서 생성자에 시드값을 지정해줄 수도 있습니다. 이 경우 랜덤값이 매번 같은 순서로 나오게 됩니다. 
+
+![373_random_use_example](https://github.com/user-attachments/assets/9cee08cf-7901-4c38-8312-6a033d765e08)
+![374_random_use_example_result](https://github.com/user-attachments/assets/a091bda1-ed10-49a1-9e28-7c9e7f8fa772)
+
+`1번`매번 다른 순서로 랜덤값을 얻는 예입니다.
+
+`2번`매번 정해진 순서로 랜덤값을 얻는 예입니다. 랜덤 함수라면 실제로 랜덤값을 이용해야지만 발표회 등에서 준비된 자료대로 발표를 해야할 때는 `2번`처럼 매번 같은 순서대로 값이 나오면 유용합니다. 
