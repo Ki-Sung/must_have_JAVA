@@ -50,7 +50,7 @@ interface MyNum {
 ![385_enum_example](https://github.com/user-attachments/assets/223e8776-1222-4ee1-99d0-9b2432cfd76c)
 ![386_enum_example_result](https://github.com/user-attachments/assets/942e4e95-920a-4d3f-a6e7-ff86e4d5a084)
 
-`1번`열거형 데이터 값을 설정합니다. 이름응ㄹ 정하고 사용할 데이터 종류만 넣으면 됩니다. 
+`1번`열거형 데이터 값을 설정합니다. 이름을 정하고 사용할 데이터 종류만 넣으면 됩니다. 
 
 `2번`올바른 타입을 넣으면 인수로 사용할 수 있습니다. `3번`은 `5번`의 매개변수가 Machine2형이기 때문에 Human2형 값을 넣으면 에러가 발생합니다. 
 
@@ -77,3 +77,25 @@ class Customer {
 ```
 
 `1번`클래스 안에 열거형이 정의되었습니다. `2번`클래스 내에서 열거형을 사용할 수 있습니다. 그러나 다른 클래스에서는 이 열거형을 사용할 수 없습니다.
+
+### 1-2. 가변 인수
+가변 인수(variable length argument)란 메서드 인수 개수가 가변적인(바꿀수 있는) 것을 말합니다. 예를 들어 System.out.printf() 메서드는 다음과 같이 정의되어 있습니다. 가변 인수에는 다음과 같이 말줄임표 ...를 붙입니다. 
+```
+PrintStream printf(String format, Object ... args)
+```
+
+가변 인수가 아닌 인수와 함께 사용할 때는 가변 인수 매개변수가 항상 마지막에 와야 합니다. 
+```
+myMethod(int a, int b, int ... v)
+```
+
+가변 인수 선언에 대한 컴파일러의 처리는 컴파일러가 다음과 같이 배열 기반 코드로 수정해 처리하게 됩니다. 
+
+![388_varargs_structure](https://github.com/user-attachments/assets/0d63739d-a70d-4c06-89fe-04baa57f0c7e)
+
+![389_varargs_example](https://github.com/user-attachments/assets/971c7fef-85b4-494b-a45d-6914e718d945)
+![390_varargs_example_result](https://github.com/user-attachments/assets/81040769-ef54-4962-bfc9-33e69ce0525b)
+
+`1번` 가변 인수는 말줄임표 ...를 사용하여 표시합니다. 
+
+`2번` 배열과 같은 방식으로 사용할 수 있습니다. 향상된 기능의 for문을 이용하여 데이터를 하나씩 꺼내올 수 있습니다. vargs.length 맴버 변수도 사용할 수 있습니다. vargs[0]처럼 지정해서 특정 요소의 값을 가져올 수도 있습니다. 
