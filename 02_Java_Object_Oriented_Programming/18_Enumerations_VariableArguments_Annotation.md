@@ -78,7 +78,7 @@ class Customer {
 
 `1번`클래스 안에 열거형이 정의되었습니다. `2번`클래스 내에서 열거형을 사용할 수 있습니다. 그러나 다른 클래스에서는 이 열거형을 사용할 수 없습니다.
 
-### 1-2. 가변 인수
+## 2. 가변 인수
 가변 인수(variable length argument)란 메서드 인수 개수가 가변적인(바꿀수 있는) 것을 말합니다. 예를 들어 System.out.printf() 메서드는 다음과 같이 정의되어 있습니다. 가변 인수에는 다음과 같이 말줄임표 ...를 붙입니다. 
 ```
 PrintStream printf(String format, Object ... args)
@@ -99,3 +99,30 @@ myMethod(int a, int b, int ... v)
 `1번` 가변 인수는 말줄임표 ...를 사용하여 표시합니다. 
 
 `2번` 배열과 같은 방식으로 사용할 수 있습니다. 향상된 기능의 for문을 이용하여 데이터를 하나씩 꺼내올 수 있습니다. vargs.length 맴버 변수도 사용할 수 있습니다. vargs[0]처럼 지정해서 특정 요소의 값을 가져올 수도 있습니다. 
+
+## 3. 어노테이션
+자바 어노테이션(annotation)은 자바 소스 코드에 추가하여 사용할 수 있는 메타 데이터의 일종입니다. `@`기호를 앞에 붙여서 사용합니다. 자바 5이상에서 사용 가능합니다. 여기서는 다음 세 가지만 살펴보고자 합니다. 
+- @Override
+- @Deprecated
+- @SuppressWarnings
+
+### 3-1. @Override 
+오버라이딩을 올바르게 했는지 컴파일러가 체크합니다. 오버라이딩할 때 메서드 명을 잘못 적는 실수를 하는 경우가 많은데 이런 점을 방지하는데 사용합니다.
+
+![391_annotation_example](https://github.com/user-attachments/assets/4f28868e-29f0-4ed0-87fd-3e599cde6722)
+![392_annotation_example_result](https://github.com/user-attachments/assets/edf7dddd-9ec0-45a7-bb57-533b4dd21eb5)
+
+`1번`move() 메서드를 오버라이딩 했습니다. 예를 들어 본인은 오버라이딩을 했다고 생각했지만, 오타가 났다면 오버라이딩이 아니고 컴파일러는 프로그래머가 새로운 메서드를 만들었다고 판단하게 됩니다. 그러나 @override 어노테이션이 있기 때문에 새로운 메서드가 아니고 오타라고 판단해 줍니다. 
+
+### 3-2. @Deprecated
+이 어노테이션이 적용된 메서드는 문제의 발생소지가 있거나 개선된 기능이 다른 것으로 대체되어서 더 이상 필요 없게 되었음을 뜻합니다. 아직은 호환성 유지를 위해서 존재하지만 이후에 사라질 수 있는 클래스 또는 메서드를 가리켜 Deprecated(더 이상 사용되지 않음)되었다고 합니다.
+
+![393_depreacted_example](https://github.com/user-attachments/assets/cd884e3f-c5f4-498b-bb36-a1d7c786ea06)
+![394_depreacted_example_result](https://github.com/user-attachments/assets/36e09154-ea4f-435c-a147-d24075f1abd9)
+
+`2번`move() 메서드를 대체할 run() 메서드가 추가되었기에 이후에 사용을 하지 말라고 `1번`에 어노테이션을 붙여주었습니다.
+
+[명령 프롬프트]에서 `javac -encoding UTF-8`명령으로 직접 컴파일을 하면 다음과 같은 메시지가 출력됩니다. 
+
+컴파일은 되었지만, Deprecated된 메서드가 포함되어 있다는 메시지를 보여준 겁니다. 
+![395_command_line_example](https://github.com/user-attachments/assets/f1d24033-916d-4301-a470-21c09508a9b3)
