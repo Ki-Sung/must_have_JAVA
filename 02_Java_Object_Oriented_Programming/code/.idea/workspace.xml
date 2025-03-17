@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd9c382a-0b5a-41ac-ba6d-353874ff06a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Chapter_18/Ex06_SuppressWarnings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +42,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.build&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Ex07_mainParameter">
+  <component name="RunManager">
     <configuration name="Ex01_MemoryInStack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Chapter_10.Ex01_MemoryInStack" />
       <module name="code" />
