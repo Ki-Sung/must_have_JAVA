@@ -126,3 +126,16 @@ myMethod(int a, int b, int ... v)
 
 컴파일은 되었지만, Deprecated된 메서드가 포함되어 있다는 메시지를 보여준 겁니다. 
 ![395_command_line_example](https://github.com/user-attachments/assets/f1d24033-916d-4301-a470-21c09508a9b3)
+
+### 3-3. @SuppressWarnings
+자바의 버전업에 따른 Deprecated 메시지는 하위 호환성을 위해 메시지만 표시되고 실제로 메서드가 없어지고 그러진 않고 있습니다. 그런데 Deprecated되었다는 경고가 계속 발생합니다. @SuppressWarnings 어노테이션에 deprecation 관련 경고 등 특정 메시지를 지정하면 해당 경고 메시지를 출력하지 말라는 의미입니다. 
+
+![396_supperess_wanrings_example](https://github.com/user-attachments/assets/fd2a7d5f-89e5-4728-8892-a8e8de9d687c)
+![397_supperess_wanrings_example_result](https://github.com/user-attachments/assets/ba282e32-983d-4ae9-80de-0bf33c174e20)
+
+@Deprecated된 메서드를 사용하면 경고 메시지를 내라고 한 것이기 때문에 사용하는 곳마다 @SuppressWarnings을 사용해줘야 합니다. 
+
+### 학습마무리 - 핵심 요약 
+1. 열거형은 서로 관련 있는 상수들을 모아놓고 대표할 수 있는 이름을 정의한 것입니다.
+2. 가변 인수란 메서드 인수 개수가 가변적인 것을 말합니다.
+3. 자바 어노테이션은 자바 소스 코드에 추가하여 사용할 수 있는 메타 데이터의 일종입니다.
