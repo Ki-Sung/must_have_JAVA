@@ -51,3 +51,20 @@
 #### To Do 03 - 실행시켜 입력된 값이 잘 출력되는지 확인합니다.
 ![401_bubble_sort_example_step1_result](https://github.com/user-attachments/assets/a5783faa-792f-41c7-9253-447b29315c78)
 
+### 1-3. 입력 처리 코드를 메서드로 분리하기
+#### To Do 01 - 테스트가 끝난 입력 처리 부분을 메서드로 분리합니다. 이때 매개변수로 배열을 사용합니다.
+
+![402_bubble_sort_example_step2](https://github.com/user-attachments/assets/13d3db62-9c8e-4708-a312-f5995c266e27)
+
+`5번`입력된 정수 10개를 처리하기 위한 배열을 정의합니다. `6번`메서드에 배열의 참조 변수를 매개변수로 넘깁니다.
+
+`1번`매개변수로 배열을 사용합니다. 힙에는 객체가 하나 만들어져 있지만, 그 객체를 참조하는 참조 변수는 이렇게 여려개가 될 수 있습니다. 
+
+`2번`입력 스트림을 처리하는 스캐너 클래스를 정의합니다. 
+
+`3번`반복문을 사용해 정수 10개를 입력받습니다. 
+
+`4번`입력된 값을 배열에 제대로 저장했는지 반복문으로 배열의 값을 출력하여 확인합니다. 
+
+#### To Do 02 - 실행시켜 입력된 값이 잘 출력되는지 확인합니다.
+![403_bubble_sort_example_step2_result](https://github.com/user-attachments/assets/abeec8fd-2524-46a7-8ed3-fb9d253ac7b3)
