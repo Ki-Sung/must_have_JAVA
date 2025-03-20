@@ -3,7 +3,7 @@ package Chapter_19;
 // 임포트
 import java.util.Scanner;                           // Scanner 클래스 임포트
 
-public class BubbleSort {
+public class BubbleSortStep1 {
     // 자바 프로그램 실행
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);        // 사용자 입력을 받기 위한 Scanner 객체 생성
@@ -20,4 +20,5 @@ public class BubbleSort {
         }
         System.out.println();                       // 출력 후 줄바꿈
     }
+
 }
