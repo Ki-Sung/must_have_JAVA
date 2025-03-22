@@ -68,3 +68,29 @@
 
 #### To Do 02 - 실행시켜 입력된 값이 잘 출력되는지 확인합니다.
 ![403_bubble_sort_example_step2_result](https://github.com/user-attachments/assets/abeec8fd-2524-46a7-8ed3-fb9d253ac7b3)
+
+### 1-4. 입력된 값 정렬하기 
+이제 사용자가 입력한 값들을 정렬하는 코드를 앞에서 본 이론대로 만들어봅시다. 
+
+![404_bubble_sort_example_step3](https://github.com/user-attachments/assets/f43a73ac-8341-4679-98d8-8d76eaf5eaae)
+
+`1번`바깥의 for문을 입력된 숫자만큼 반복되도록 만듭니다. 
+
+`2번`단계별로 반복 횟수를 한 번씩 줄어들게 설정합니다. 
+
+`3번`비교하는 배열의 두 값 중 앞 쪽의 숫자가 크면 임시 변수를 이용하여 값을 서로 바꿉니다.
+
+### 1-5. 전체 코드 
+#### To Do 01 - 위 코드를 적용하여 전체 코드를 다음과 같이 완성합니다.
+
+![405_bubble_sort_example_whole_code](https://github.com/user-attachments/assets/202bbe7c-c963-4c48-87a9-1a5849586535)
+
+`1번`정수 10개를 무작위로 입력 받습니다. 
+
+`2번`버블 정렬을 구현한 메서드에 배열의 참조 변수를 넘겨서 정렬합니다.
+
+`3번`정렬된 결과를 출력합니다.
+
+#### To Do 02 - 실행시켜 입력된 값이 잘 출력되는지 확인합니다.
+![406_bubble_sort_example_whole_code_result](https://github.com/user-attachments/assets/7f0fa84f-c4ed-4533-8bf7-eeb015b84334)
+
