@@ -94,3 +94,65 @@
 #### To Do 02 - 실행시켜 입력된 값이 잘 출력되는지 확인합니다.
 ![406_bubble_sort_example_whole_code_result](https://github.com/user-attachments/assets/7f0fa84f-c4ed-4533-8bf7-eeb015b84334)
 
+## 2. 퀴즈: 삽입 정렬 
+정렬 관련 알고리즘은 앞에서 소개한 버블 정렬 외에도 다양합니다. 그중에서도 퀵 정렬, 삽입 정렬 등은 버블 정렬과 마찬가지로 간단한 알고리즘입니다. 
+
+이번에는 삽입 정렬 동작 방식을 알아보고자 합니다. 아래의 내용에 힌트도 제공되니 직접 구현해보고 나서 제시된 전체 코드와 비교해보세요. 
+
+### 2-1. 사전 지식: 삽입 정렬 알고리즘
+삽입 정렬은 배열의 모든 요소를 앞에서부터 차례대로 이미 정렬된 배열 부분과 비교하여, 적절한 자신의 위치를 찾아 삽입하는 정렬입니다. 
+
+동작 규칙은 간단합니다. 
+
+1. 인덱스 0은 정렬되어 있다고 가정합니다. 그래서 현 위치는 인덱스 1부터 시작합니다.
+2. 현 인덱스의 값과 바로 앞 인덱스의 값을 비교하여 더 작은 값을 앞으로, 큰 값을 뒤로 저장합니다.
+3. 2번 과정을 반복하다가 바로 앞에 있는 값이 더 작다면 현 위치를 뒤로 옮깁니다(인덱스 +1 위치로).
+4. 마지막 인덱스까지 2번 3번을 반복합니다.
+
+예를 들어 입력된 값이 5개라고 했을 때, 삽입 정렬은 다음과 같이 네 번에 걸쳐서 비교를 수행하면서 정렬을 수행합니다. 
+
+![407_insert_sort_algorithm](https://github.com/user-attachments/assets/e7431637-7faa-4797-b285-72185d73666d)
+
+![408_insert_sort_algorithm_first_step](https://github.com/user-attachments/assets/92130da1-f832-4027-8199-26750177c6e0)
+
+5와 3을 비교합니다. 3이 작으므로 둘의 위치를 임시 변수를 이용하여 바꾸어줍니다. 
+
+![409_insert_sort_algorithm_first_step_result](https://github.com/user-attachments/assets/c6f30c84-c419-4ebe-91b6-6bbd4c6cfac7)
+
+![410_insert_sort_algorithm_second_step](https://github.com/user-attachments/assets/44010a66-9d78-4e76-ba08-8a8cba85e6a1)
+
+먼저 5와 1을 비교합니다. 1이 작으므로 둘의 위치를 임시 변수를 이용하여 바꾸어줍니다. 
+
+![411_insert_sort_algorithm_second_step_2](https://github.com/user-attachments/assets/eb0f4a59-c3ad-4e39-8722-9ce1f9846f65)
+
+다시 3과 1을 비교합니다. 역시 1이 작으므로 둘의 위치를 임시 변수를 이용하여 바꾸어줍니다. 
+
+![412_insert_sort_algorithm_second_step_result](https://github.com/user-attachments/assets/3a4f6c3f-e24f-4220-8ef6-70073c0a5df0)
+
+![413_insert_sort_algorithm_third_step](https://github.com/user-attachments/assets/93db2cfd-b665-4590-bcdd-b5af905de461)
+
+먼저 5와 4를 비교합니다. 4가 작으므로 둘의 위치를 임시 변수를 이용하여 바꾸어줍니다.
+
+![414_insert_sort_algorithm_third_step_2](https://github.com/user-attachments/assets/7585e26f-cf73-47c3-8e17-f7b920976816)
+
+다시 3과 4를 비교합니다. 4가 크므로 위치 변경 없이 그대로 빈 자리에 입력해줍니다. 
+
+![415_insert_sort_algorithm_third_step_result](https://github.com/user-attachments/assets/fe3e9f2d-01cf-4498-8861-59543c9c36ff)
+
+![416_insert_sort_algorithm_forth_step_1](https://github.com/user-attachments/assets/11de2209-acc5-48fc-a976-e14d349467cc)
+
+먼저 5와 2를 비교합니다. 2가 작으므로 임시 변수를 이용하여 둘의 위치를 바꾸어줍니다. 
+
+![417_insert_sort_algorithm_forth_step_2](https://github.com/user-attachments/assets/28cc179f-b262-485f-aba2-11e74e14c065)
+
+그리고 4와 2를 비교합니다. 2가 작으므로 임시 변수를 이용하여 둘의 위치를 바꾸어줍니다. 
+
+![418_insert_sort_algorithm_forth_step_3](https://github.com/user-attachments/assets/fafb5455-cbeb-4128-9f29-766c17d0b226)
+
+그리고 3과 2를 비교합니다. 2가 작으므로 임시 변수를 이용하여 둘의 위치를 바꾸어줍니다. 
+
+![419_insert_sort_algorithm_forth_step_4](https://github.com/user-attachments/assets/af8a1d0b-5f20-4e42-9d2d-ecd4971fbebc)
+
+다시 1과 2를 비교합니다. 2가 크므로 위치 변경 없이 그대로 빈 자리에 입력해줍니다. 
+
+![420_insert_sort_algorithm_forth_step_result](https://github.com/user-attachments/assets/0f94e0a8-6d63-4c06-93b7-c453a212aff5)
