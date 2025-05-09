@@ -11,7 +11,7 @@ class Npc1 {
 class HumanCamp1 {
     private Npc1 unit;                              // Npc1 타입의 멤버 변수 unit -> 인간 진영에 속한 유닛을 저장
 
-    public void set(Npc1 unit) {                    // 행
+    public void set(Npc1 unit) {
         this.unit = unit;                           // 매개변수로 받은 Npc1 객체를 맴버 변수 unit에 할당
     }
 
